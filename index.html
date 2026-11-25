@@ -454,7 +454,7 @@ const CCOL=n=>(CL.find(c=>c.name==n)||{}).color,CIC=n=>n=="الكل"?"✨":(CL.f
 const burst=(x,y,ch,n=8)=>{for(let i=0;i<n;i++){const b=document.createElement("span");b.className="burst em";b.textContent=ch[i%ch.length];b.style.left=x+"px";b.style.top=y+"px";
  b.style.setProperty("--dx",(Math.random()*240-120)+"px");b.style.setProperty("--dy",(-60-Math.random()*160)+"px");b.style.setProperty("--rt",(Math.random()*360-180)+"deg");document.body.appendChild(b);setTimeout(()=>b.remove(),1050)}};
 (()=>{const st=$("#stars");for(let i=0;i<38;i++){const t=document.createElement("i");t.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s;animation-duration:${2+Math.random()*3}s`;st.appendChild(t)}
- const h=new Date().getHours();$("#hi").textContent=h<5?"سهران ليه؟ فضفض 🌙":h<12?"صباح الخير ☀️":h<18?"نهارك سعيد 🌤️":"مساء الخير 🌙"})();
+ const h=new Date().getHours();$("#hi").textContent=h<5?"لسه صاحي؟ احنا هنا 🌙":h<12?"صباح الخير، نورت ☀️":h<18?"أهلاً بيك، نورت 🌤️":"مساء الخير، نورتنا 🌙"})();
 const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("on"),2200)};
 // ---- backends
 const SB=CFG.SUPABASE_URL,KEY=CFG.SUPABASE_KEY,PC="id,body,category,intent,alias,avatar,created_at,expires_at,hidden";
@@ -668,7 +668,7 @@ const PX=(id,w)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg
 const lazyBg=(el,id,w)=>{if(!el||el.dataset.l)return;el.dataset.l=1;const go=()=>{const im=new Image();im.onload=()=>{el.style.backgroundImage=`url(${im.src})`;el.classList.add("on")};im.onerror=()=>{};im.src=PX(id,w)};
  if("IntersectionObserver"in window){const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){o.disconnect();go()}});o.observe(el)}else go()};
 const CALM=["مش لازم تحل كل حاجة النهاردة. كفاية إنك وصلت لهنا.","خد نفس عميق. اللي فات فات، واللي جاي هتقدر عليه.","مشاعرك مش ضعف، دي دليل إنك إنسان.","حتى أصعب يوم له آخر.","مش لازم تكون بخير طول الوقت، وده طبيعي.","الفضفضة أول خطوة للراحة.","إنت مش لوحدك، في ناس كتير بتحس زيك.","خليك لطيف مع نفسك زي ما بتكون مع صاحبك.","خطوة صغيرة النهاردة تكفي.","الهدوء بيبدأ بنفس واحد.","اللي بيتعب بيستاهل يرتاح.","ما تقارنش يومك بأيام الناس.","كلمة طيبة النهاردة ممكن تغيّر يوم حد.","الصبر مش إنك تستنى، الصبر إنك تفضل ماشي.","من حقك تقول: أنا محتاج راحة.","النور بييجي بعد أطول ليل.","اسمح لنفسك تحس، وبعدين اسمح لنفسك تعدّي.","الراحة مش رفاهية، دي حاجة أساسية.","كل يوم جديد فرصة تبدأ بهدوء.","اللي في قلبك يستاهل يتسمع.","اهدا شوية، الدنيا مش هتجري منك."];
-(function(){const h=new Date().getHours(),T=h>=5&&h<12?["صباح الهدوء ☀️",39037835]:h>=12&&h<17?["نهارك هادي 🌿",1423600]:h>=17&&h<20?["مساء السكينة 🌅",35484518]:["ليلة هادية 🌙",41046525];
+(function(){const h=new Date().getHours(),T=h>=5&&h<12?["صباح الخير، يومك هيبقى حلو ☀️",39037835]:h>=12&&h<17?["أهلاً بيك، خد راحتك 🌿",1423600]:h>=17&&h<20?["مساء الخير، نورتنا 🌅",35484518]:["ليلة هادية، وإنت في أمان 🌙",41046525];
  $("#cg").textContent=T[0];$("#cq").textContent=CALM[Math.floor(Date.now()/864e5)%CALM.length];lazyBg($("#calm .cbg"),T[1],900);document.querySelectorAll("[data-ph]").forEach(x=>lazyBg(x,x.dataset.ph,700))})();
 let brT=null;function brClose(){clearInterval(brT);brT=null;$("#br").classList.remove("on");document.body.style.overflow=""}
 $("#brb").onclick=()=>{const ov=$("#br"),r=$("#brr"),t=$("#brt"),sb=$("#brs");ov.classList.add("on");document.body.style.overflow="hidden";lazyBg(ov.querySelector(".cbg"),16640848,900);let n=30,ph=-1;t.textContent="استعد";sb.textContent="30";r.className="brring";
@@ -741,7 +741,7 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="4.7";
+const VER="4.8";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 
 function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
