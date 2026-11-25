@@ -1,0 +1,76 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>فضفض</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1e1b2e">
+<link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#1e1b2e;color:#eee;font-family:system-ui,"Segoe UI",Tahoma,sans-serif;line-height:1.6}
+.w{max-width:640px;margin:auto;padding:14px 14px 90px}h1{margin:6px 0;font-size:26px}small,.m{color:#a9a4c4;font-size:13px}
+.card{background:#2a2640;border-radius:14px;padding:14px;margin:12px 0}
+textarea,select,input{width:100%;background:#1e1b2e;color:#eee;border:1px solid #433d66;border-radius:10px;padding:10px;font:inherit;margin:6px 0}
+button{background:#8b7cf6;color:#fff;border:0;border-radius:10px;padding:9px 14px;font:inherit;cursor:pointer}
+button.g{background:#3a3560}button.on{background:#f6a97c;color:#222}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tags button{padding:5px 11px;font-size:14px}
+.row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.b{font-size:12px;padding:2px 8px;border-radius:8px;background:#433d66}
+.cm{border-top:1px solid #433d66;margin-top:8px;padding-top:8px}.err{color:#ff9c9c}
+</style></head><body><div class="w">
+<h1>🌙 فضفض</h1><small>اكتب من غير اسم. محدش يعرف إنت مين.</small>
+<div id="mode" class="m"></div>
+<div class="card"><textarea id="t" rows="4" maxlength="2000" placeholder="اكتب اللي جواك..."></textarea>
+<select id="cat"><option>عاطفية</option><option>زوجية</option><option>عائلية</option><option>شغل</option><option>أصحاب</option><option>أخرى</option></select>
+<select id="int"><option value="advice">عايز نصيحة</option><option value="vent">عايز أفضفض بس</option></select>
+<button id="send">انشر بشكل مجهول</button> <small>الاعتراف بيختفي بعد ٢٤ ساعة</small><div id="e" class="err"></div></div>
+<div class="tags" id="f"></div><div id="feed"></div>
+</div>
+<script src="config.js"></script>
+<script>
+const $=s=>document.querySelector(s),CFG=window.FADFAD||{},CLOUD=!!(CFG.SUPABASE_URL&&CFG.SUPABASE_KEY);
+const CATS=["الكل","عاطفية","زوجية","عائلية","شغل","أصحاب","أخرى"],KINDS={same:"مريت بنفس الموقف 🤝",hug:"محتاج حضن 🤗",tip:"نصيحة 💡"};
+let dev=localStorage.dev||(localStorage.dev=crypto.randomUUID()),cat="الكل",open={},busy=0;
+const A1=["ظل","نجم","قمر","غيمة","نسمة","طيف","شمعة","موجة"],A2=["حزين","هادي","تايه","صبور","حالم","وحيد","شجاع","طيب"],EM=["🌙","⭐","🍃","🕊️","🌧️","🔥","🌿","☁️"];
+const rnd=a=>a[Math.random()*a.length|0],alias=()=>`${rnd(A1)} ${rnd(A2)} ${rnd(EM)}`;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ago=d=>{const m=(Date.now()-new Date(d))/6e4;return m<1?"دلوقتي":m<60?`من ${m|0} دقيقة`:`من ${m/60|0} ساعة`};
+const left=d=>{const h=(new Date(d)-Date.now())/36e5;return h<1?"أقل من ساعة":`${Math.ceil(h)} ساعة`};
+// ---- backends
+const H={apikey:CFG.SUPABASE_KEY,Authorization:"Bearer "+CFG.SUPABASE_KEY,"Content-Type":"application/json"};
+const rq=async(p,o={})=>{const r=await fetch(CFG.SUPABASE_URL+"/rest/v1/"+p,{headers:H,...o});if(!r.ok)throw new Error(await r.text());return r.status==204?null:r.text().then(t=>t?JSON.parse(t):null)};
+const L=()=>JSON.parse(localStorage.db||'{"p":[],"c":[],"r":[]}'),S=d=>localStorage.db=JSON.stringify(d);
+const API=CLOUD?{
+ async load(){const p=await rq("posts?select=*&hidden=eq.false&expires_at=gt."+new Date().toISOString()+"&order=created_at.desc&limit=50");
+  if(!p.length)return{p,c:[],r:[]};const ids="in.("+p.map(x=>x.id).join(",")+")";
+  const [c,r]=await Promise.all([rq("comments?select=*&order=created_at.asc&post_id="+ids),rq("reactions?select=*&post_id="+ids)]);return{p,c,r}},
+ post:x=>rq("posts",{method:"POST",body:JSON.stringify(x)}),
+ comment:x=>rq("comments",{method:"POST",body:JSON.stringify(x)}),
+ react:(id,k,on)=>on?rq(`reactions?post_id=eq.${id}&device_id=eq.${dev}&kind=eq.${k}`,{method:"DELETE"}):rq("reactions",{method:"POST",body:JSON.stringify({post_id:id,device_id:dev,kind:k})}),
+ report:id=>rq("reports",{method:"POST",body:JSON.stringify({post_id:id,device_id:dev})})
+}:{
+ async load(){const d=L(),n=Date.now();d.p=d.p.filter(x=>new Date(x.expires_at)>n&&!x.hidden).sort((a,b)=>b.created_at.localeCompare(a.created_at));return d},
+ async post(x){const d=L();d.p.push({...x,id:crypto.randomUUID(),created_at:new Date().toISOString(),expires_at:new Date(Date.now()+864e5).toISOString()});S(d)},
+ async comment(x){const d=L();d.c.push({...x,id:crypto.randomUUID(),created_at:new Date().toISOString()});S(d)},
+ async react(id,k,on){const d=L();d.r=d.r.filter(x=>!(x.post_id==id&&x.device_id==dev&&x.kind==k));if(!on)d.r.push({post_id:id,device_id:dev,kind:k});S(d)},
+ async report(id){const d=L();d.p.forEach(x=>{if(x.id==id)x.hidden=true});S(d)}};
+// ---- ui
+$("#mode").textContent=CLOUD?"متصل — الناس بتشوف اعترافات بعض":"وضع تجريبي على جهازك بس (لسه مفيش سيرفر)";
+$("#f").innerHTML=CATS.map(c=>`<button class="${c==cat?"":"g"}" data-c="${c}">${c}</button>`).join("");
+$("#f").onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;[...$("#f").children].forEach(b=>b.className=b.dataset.c==cat?"":"g");render()}};
+let D={p:[],c:[],r:[]};
+async function render(){try{D=await API.load()}catch(e){$("#feed").innerHTML='<div class="card err">مش قادر أتصل بالسيرفر. اتأكد من النت وإعدادات config.js</div>';return}
+ const ps=D.p.filter(p=>cat=="الكل"||p.category==cat);
+ $("#feed").innerHTML=ps.length?ps.map(p=>{const cs=D.c.filter(c=>c.post_id==p.id);
+ return`<div class="card" data-id="${p.id}"><b>${esc(p.alias)}</b> <span class="m">· ${ago(p.created_at)} · بيختفي بعد ${left(p.expires_at)}</span>
+ <div class="row"><span class="b">${esc(p.category)}</span><span class="b">${p.intent=="advice"?"عايز نصيحة":"عايز يفضفض بس"}</span></div>
+ <p style="white-space:pre-wrap">${esc(p.body)}</p><div class="row">${Object.keys(KINDS).map(k=>{const n=D.r.filter(r=>r.post_id==p.id&&r.kind==k),on=n.some(r=>r.device_id==dev);
+ return`<button class="${on?"on":"g"}" data-k="${k}" data-on="${on?1:0}">${KINDS[k]} ${n.length||""}</button>`}).join("")}
+ <button class="g" data-a="rep">🚩 بلاغ</button></div>
+ <div class="cm">${cs.map(c=>`<div><b>${esc(c.alias)}</b>: ${esc(c.body)}</div>`).join("")}
+ <input placeholder="اكتب رد مجهول..." data-in="${p.id}" maxlength="1000"><button data-a="cm">رد</button></div></div>`}).join(""):'<div class="card m">لسه مفيش اعترافات هنا. كن أول واحد.</div>'}
+$("#feed").onclick=async e=>{const c=e.target.closest(".card");if(!c||busy)return;const id=c.dataset.id,t=e.target;busy=1;
+ try{if(t.dataset.k)await API.react(id,t.dataset.k,t.dataset.on=="1");
+ else if(t.dataset.a=="cm"){const i=c.querySelector("input"),v=i.value.trim();if(v){const k="al"+id,m=JSON.parse(sessionStorage.al||"{}");m[id]=m[id]||alias();sessionStorage.al=JSON.stringify(m);await API.comment({post_id:id,body:v,alias:m[id],device_id:dev})}}
+ else if(t.dataset.a=="rep"&&confirm("تبلّغ عن الاعتراف ده؟")){await API.report(id)}}catch(x){alert("حصلت مشكلة، جرب تاني")}
+ busy=0;render()};
+$("#send").onclick=async()=>{const v=$("#t").value.trim();$("#e").textContent="";if(!v)return;
+ try{await API.post({body:v,category:$("#cat").value,intent:$("#int").value,alias:alias(),device_id:dev});$("#t").value="";render()}catch(x){$("#e").textContent="مقدرتش أنشر، جرب تاني"}};
+render();setInterval(()=>{if(!busy&&!document.activeElement.matches("input,textarea"))render()},20000);
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
+</script></body></html>
