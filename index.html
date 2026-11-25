@@ -173,11 +173,12 @@ header,.wrap{position:relative;z-index:1}header{position:sticky}
 @media(min-width:860px){
  :root{--bar:0px}.tabs{display:none}.nav{display:flex}.fab{bottom:28px;left:28px;width:auto;height:56px;border-radius:30px;padding:0 24px;font-size:17px;font-weight:800;gap:8px;grid-auto-flow:column}
  .wrap{grid-template-columns:320px 1fr;align-items:start;padding-bottom:110px}
- #home{display:contents}.view{display:none}.view.on{display:block}#home.on{display:contents}
+ .view{display:none}.view.on{display:block}#home.on{display:contents}#home:not(.on){display:none}
  .side{position:sticky;top:84px}.hero{padding:26px}.hero h1{font-size:26px}
  .chips{position:static;flex-wrap:wrap;overflow:visible}.ab{grid-column:1/-1;max-width:700px;margin:auto;width:100%}
  .sheet{border-radius:26px;margin-bottom:6vh;max-height:88vh}.ov{align-items:center}.toast{bottom:90px}
  .grab{display:none}.fab span.t{display:inline}}
+@media(max-width:480px){#inst{padding:6px 10px;font-size:12px}#bell{width:34px;height:34px;font-size:16px}.logo small{display:none}#fl{transform:scale(.9)}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head><body>
 <div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="فضفض">
@@ -205,16 +206,16 @@ header,.wrap{position:relative;z-index:1}header{position:sticky}
 <div><svg viewBox="0 0 48 48"><path d="M24 42C8 31 6 21 11 15a9 9 0 0 1 13 2 9 9 0 0 1 13-2c5 6 3 16-13 27z" fill="#ff8aa5"/></svg><b>دعم</b>ناس تسمعك وتشجعك</div></div><div id="mode"></div></aside>
  <section><div id="dq"></div><div id="mdc"></div><div class="funrow"><button data-go="quiz"><span class="em">🧩</span><b>اختبار الشخصية</b><small>اعرف نسب صفاتك</small></button><button data-go="love"><span class="em">💘</span><b>نسبة التوافق</b><small>بين اسمين، للتسلية</small></button><button data-go="help"><span class="em">🏆</span><b>أكتر المساعدين</b><small>ناس ردودها أفادت غيرها</small></button><button data-go="story"><span class="em">🌟</span><b>قصص نجاح</b><small>حاجات حلوة حصلت بعد الفضفضة</small></button></div><div class="chips" id="f"></div><div id="feed"></div></section>
 </main>
-<main id="about" class="view ab">
+<main id="about" class="view ab"><div class="vstamp" style="text-align:center;color:var(--mut);font-size:12px;margin-bottom:6px"></div>
  <div class="card"><h3>🔒 خصوصيتك</h3><p>مفيش إيميل ولا رقم تليفون ولا اسمك الحقيقي. إنت اللي بتختار اسم مستعار وصورة، وتقدر تنشر أي اعتراف باسم عشوائي لو عايز. رقم حسابك مخفي عن أي مستخدم تاني.</p></div>
  
  <div class="card"><h3>🤝 قواعد المجتمع</h3><p>كلنا هنا عشان نسمع ونساعد. الكلام الجارح أو المسيء ممنوع. لو شفت حاجة غلط اضغط بلاغ، ولما توصل 3 بلاغات من ناس مختلفة الاعتراف بيختفي.</p></div>
  <div class="card"><h3>📲 تثبيت التطبيق</h3><p>أندرويد وويندوز: من كروم أو إيدج اضغط "ثبّت التطبيق". آيفون: من سفاري اضغط مشاركة ثم "إضافة إلى الشاشة الرئيسية".</p></div>
 </main>
-<main id="fun" class="view"></main>
+<main id="fun" class="view ab"></main>
 <main id="notif" class="view ab"></main>
 <main id="acct" class="view ab"></main>
-<main id="adminv" class="view"></main></div>
+<main id="adminv" class="view ab"></main></div>
 <button class="fab" data-open aria-label="اكتب اعتراف"><span class="em">✍️</span><span class="t">اكتب اعتراف</span></button>
 <div class="tabs"><button class="on" data-v="home"><i class="em">🏠</i>الرئيسية</button><button data-v="acct"><i class="em">👤</i>حسابي</button><button data-v="adminv" id="tabAdm" style="display:none"><i class="em">🛠</i>الإدارة</button><button data-v="fun"><i class="em">🎯</i>تسلية</button></div>
 <div class="ov" id="ov"><div class="sheet"><div class="grab"></div><h2>اكتب اللي جواك</h2><small class="hint" style="text-align:start;display:block">محدش هيعرف إنت مين. هيظهر باسم مستعار.</small>
@@ -348,10 +349,12 @@ $("#feed").innerHTML='<div class="sk"></div><div class="sk"></div>';
 let D={p:[],c:[],r:[],mine:new Set()};const drafts={};
 const hpBtn=c=>{if(!CLOUD)return"";const n=(D.h||[]).filter(x=>x.comment_id==c.id).length,on=D.hm&&D.hm.has(c.id),mine=prof&&c.alias.toLowerCase()==prof.username.toLowerCase();
  return mine?(n?`<span class="hp2" style="display:block">💡 أفاد ${n}</span>`:""):`<span style="display:block"><button class="hpb em ${on?"on":""}" data-a="hp" data-cid="${c.id}" data-on="${on?1:0}">💡 أفادني${n?" · "+n:""}</button></span>`};
+let fsig="",dsig="";
 async function render(){const ae=document.activeElement;if(ae&&ae.matches("#feed input")&&!busy)return;
  $$("#feed input[data-in]").forEach(i=>{if(i.value)drafts[i.dataset.in]=i.value;else delete drafts[i.dataset.in]});
  try{D=await API.load()}catch(e){$("#feed").innerHTML='<div class="card err">مش قادر أتصل بالسيرفر. اتأكد من النت وجرب تاني.</div>';return}
  const ps=D.p.filter(p=>cat=="الكل"||p.category==cat);
+ const sg=JSON.stringify([D.p,D.c,D.r,D.h,[...D.mine],[...(D.hm||[])],SP,cat,open,isAdm(),prof&&prof.username,prof&&prof.avatar,!!sess,CL.length]);if(sg===fsig&&$("#feed").innerHTML){renderDaily();return}fsig=sg;
  $("#feed").innerHTML=ps.length?ps.map((p,i)=>{const cs=D.c.filter(c=>c.post_id==p.id),sh=open[p.id]?cs:cs.slice(-2);
  return`<article class="card" style="--cc:${CCOL(p.category)||"#8b7cf6"};animation-delay:${Math.min(i,6)*50}ms" data-id="${p.id}"><div class="ph">${av(p.alias,"",p.avatar)}<div><b>${esc(p.alias)}</b>${vb(p.alias)}${isAdm()?`<span class="adm"><button data-a="aed">✏️</button><button data-a="adel">🗑</button><button data-a="aban">🚫</button></span>`:""}<span class="m">${ago(p.created_at)}${isFinite(new Date(p.expires_at))?" · يختفي بعد "+left(p.expires_at):""}</span></div>
  <div class="tg"><span class="b">${esc(p.category)}</span><span class="b ${p.intent=="advice"?"adv":"vnt"}">${p.intent=="advice"?"عايز نصيحة":"عايز يفضفض بس"}</span></div></div>
@@ -384,6 +387,7 @@ let DQ={q:null,a:[],l:[],m:[]};const dr={};
 async function renderDaily(){const el=$("#dq"),i=el.querySelector("input");if(i&&i.value)dr.v=i.value;
  try{const[q,an,m]=await Promise.all([X.dq(),X.ans(),X.moods()]);DQ={q:q||FQ[Math.floor(Date.now()/864e5)%FQ.length],custom:!!q,a:an.a,l:an.l,mine:an.mine||new Set(),m}}catch(e){return}
  const mine=localStorage["mood"+day()],done=localStorage["ans"+day()];
+ {const sg=JSON.stringify([DQ.q,DQ.a,DQ.l,[...DQ.mine],DQ.m,mine,done,isAdm(),prof&&prof.username]);if(sg===dsig&&el.innerHTML)return;dsig=sg}
  el.innerHTML=`<div class="dq"><span class="k"><span class="em">💭</span> سؤال النهاردة</span><h2>${esc(DQ.q)}</h2>
  ${done?`<div class="likeu">✅ جاوبت النهاردة، شكرًا إنك شاركت</div>`:`<div class="row2"><input placeholder="اكتب إجابتك باسم مستعار..." maxlength="500" enterkeyhint="send"><button class="snd" data-d="send">جاوب</button></div>`}
  ${DQ.a.slice(0,6).map(x=>{const n=DQ.l.filter(y=>y.answer_id==x.id),on=DQ.mine.has(x.id);return`<div class="ans">${av(x.alias,"",x.avatar)}<div><small>${esc(x.alias)}</small>${esc(x.body)}</div>${isAdm()?`<button class="lk" data-d="ad" data-id="${x.id}">🗑</button>`:""}<button class="lk em ${on?"on":""}" data-d="lk" data-id="${x.id}" data-on="${on?1:0}">${on?"❤️":"🤍"} ${n.length||""}</button></div>`}).join("")}
@@ -474,7 +478,7 @@ function renderAcct(){const el=$("#acct");if(!CLOUD){el.innerHTML='<div class="c
  if(!prof){el.innerHTML='<div class="card"><h3>👋 أهلًا بيك</h3><p>اعمل حساب باسم مستعار وصورة، من غير إيميل ولا رقم تليفون، وشارك وردّ وكمّل سلسلة أيامك.</p><button class="full" data-au2="up">حساب جديد</button><button class="full sec" data-au2="in">عندي حساب</button></div>';return}
  const s=stk();el.innerHTML=`<div class="card"><div class="me">${av("","",prof.avatar)}<div><b>${esc(prof.username)}</b>${isAdm()?'<span class="badge">👑 أدمن</span>':""}${prof.banned?'<span class="badge">موقوف</span>':""}<div class="m">🔥 أطول سلسلة: ${s.best||0} يوم</div></div></div>
  <label class="anon"><input type="checkbox" id="anon2" ${anonOn()?"checked":""}> انشر دايمًا باسم عشوائي مجهول</label>
- ${isAdm()?'<button class="full" data-v="adminv">🛠 لوحة الإدارة</button>':""}<button class="full sec" data-v="about">عن فضفض وقواعد المجتمع</button><button class="full sec" data-lo="1">تسجيل خروج</button></div>`}
+ ${isAdm()?'<button class="full" data-v="adminv">🛠 لوحة الإدارة</button>':""}<button class="full sec" data-v="about">عن فضفض وقواعد المجتمع</button><button class="full sec" data-lo="1">تسجيل خروج</button><div class="m" style="text-align:center;margin-top:8px">نسخة ${VER}</div></div>`}
 $("#acct").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.au2)authOpen(b.dataset.au2);if(b.dataset.lo&&confirm("تسجّل خروج؟"))logout()};
 $("#acct").onchange=e=>{if(e.target.id=="anon2"){localStorage.anon=e.target.checked?"1":"0";who()}};
 
@@ -523,6 +527,8 @@ $("#adminv").onclick=async e=>{const b=e.target.closest("button");if(!b)return;i
 const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="acct")renderAcct();if(v=="fun"&&!$("#fun").innerHTML)funMenu();if(v=="notif")renderNotif()};
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
-render();setInterval(()=>{if(!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
+render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
+const VER="4.1";
+if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
+document.querySelectorAll(".vstamp").forEach(x=>x.textContent="نسخة "+VER);
 </script></body></html>
