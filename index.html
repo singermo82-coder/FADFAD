@@ -303,6 +303,32 @@ html.mobile .hs .mdc{padding:8px 10px;border-radius:16px}html.mobile .hs .mdc h3
 html.mobile .hs .mo{font-size:0;padding:4px 0;min-height:40px}html.mobile .hs .mo i{font-size:24px}
 html.mobile .hs .mdc .bar{display:none}
 html.mobile .hs .dq,html.mobile .hs .mdc{margin-bottom:0}html.mobile .dq .k{justify-self:start;padding:3px 10px}
+/* v4.6 */
+.cbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}.cbs .cb{margin:0}
+.cb.playing{background:#6fe0b044;border-color:#6fe0b0aa}.cb.hl{animation:hl 1.6s ease-in-out infinite;border-color:#fff}
+@keyframes hl{50%{box-shadow:0 0 0 6px #ffffff33}}
+.calm.m-happy:after{background:linear-gradient(0deg,#5a3a0acc,#c98a2a55 70%,#ffd27a33)}
+.calm.m-calm:after{background:linear-gradient(0deg,#0a3a3acc,#2a8a7a55 70%,#7ae0c033)}
+.calm.m-tired:after,.calm.m-sad:after{background:linear-gradient(0deg,#4a1f2ecc,#b0603a55 70%,#ffb38a33)}
+.calm.m-anxious:after{background:linear-gradient(0deg,#0a2a4acc,#3a7aa855 70%,#8ad0ff33)}
+.calm:after{transition:background .6s}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}.sx{display:grid;place-items:center;gap:4px;padding:14px 8px;border-radius:18px;background:#ffffff0d;border:1px solid var(--line);font-size:28px;min-height:76px;color:var(--tx)}.sx b{font-size:14px}.sx.on{border-color:var(--p);background:#8b7cf633}
+.vl{display:flex;align-items:center;gap:10px;margin:6px 0 10px}.vl input{flex:1;min-height:32px;accent-color:#8b7cf6}
+.lvov{position:fixed;inset:0;z-index:95;display:none;background:radial-gradient(circle at 50% 30%,#2a1f5a,#0a0818 75%);overflow:hidden;align-items:center;justify-content:center;padding:20px}.lvov.on{display:flex}
+.lvc{width:100%;max-width:520px;text-align:center;max-height:100dvh;overflow:auto}.lvc h2{font-size:26px;margin:0 0 6px}.lvc p{color:var(--mut);line-height:1.8;margin:0 0 12px}
+.lvc textarea{width:100%;background:#0f0c20;border:1px solid var(--line);border-radius:18px;padding:14px;font-size:17px;outline:none;resize:none;color:var(--tx)}
+.lvc .go{width:100%;margin-top:10px;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:14px;border-radius:16px;font-weight:800;font-size:17px}
+.lvx{position:absolute;top:calc(14px + env(safe-area-inset-top));inset-inline-start:14px;width:44px;height:44px;border-radius:50%;background:#ffffff14;color:#fff;font-size:18px}
+.lvfx{font-size:20px;line-height:2;padding:10px}.lvfx span{display:inline-block;transition:opacity 3.4s ease-in,filter 3.4s ease-in,transform 3.8s ease-in;transition-delay:var(--d)}
+.lvfx.fade span{opacity:0;filter:blur(8px);transform:translate(var(--x),-60px) scale(.9)}
+.lvm{font-size:21px;line-height:1.9;font-weight:700;margin:6px 0 18px;opacity:0;transition:opacity 2s}#lvend.show .lvm{opacity:1}
+.lvs{display:block;width:100%;margin-top:10px;background:none;color:var(--mut);padding:12px;border:1px solid var(--line);border-radius:16px;font-size:14px}
+.rest{position:fixed;z-index:70;inset-inline:12px;bottom:calc(var(--bar) + 12px + env(safe-area-inset-bottom));max-width:520px;margin:auto;background:linear-gradient(135deg,#3a2a7a,#5a3a8a);border:1px solid #ffffff33;border-radius:20px;padding:14px 16px;display:none;gap:6px;box-shadow:0 14px 40px #000a}.rest.on{display:grid;animation:in .4s ease}
+.rest b{font-size:17px}.rest span{font-size:14px;opacity:.9;line-height:1.7}.rest div{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}.rest button{background:#fff;color:#2a1f6b;border-radius:999px;padding:10px 16px;font-weight:800;font-size:14px}.rest button.gh{background:#ffffff1f;color:#fff}
+html.dk .rest{bottom:24px}
+html.mobile .cin{grid-template-columns:1fr;align-content:center}html.mobile .calm{min-height:104px}html.mobile .cbs{margin-top:2px;gap:6px}html.mobile .cb{padding:6px 10px;font-size:12.5px}
+html.mobile .calm[data-mood] .cq{display:block;font-size:13px;line-height:1.6}html.mobile .calm[data-mood]{min-height:150px}
+@media(prefers-reduced-motion:reduce){.lvfx span{transition-duration:.6s!important}.cb.hl{animation:none}}
 </style></head><body>
 <div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="فضفض">
 <svg viewBox="0 0 48 48"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b7cf6"/><stop offset="1" stop-color="#e06ac0"/></linearGradient></defs>
@@ -313,7 +339,7 @@ html.mobile .hs .dq,html.mobile .hs .mdc{margin-bottom:0}html.mobile .dq .k{just
 <button id="inst">ثبّت التطبيق</button></div></header>
 <div class="wrap">
 <main id="home" class="view on">
-<section class="calm" id="calm"><div class="cbg"></div><div class="cin"><div class="cg" id="cg"></div><div class="cq" id="cq"></div><button class="cb" id="brb"><span class="em">🌬</span> تنفّس معايا 30 ثانية</button></div></section>
+<section class="calm" id="calm"><div class="cbg"></div><div class="cin"><div class="cg" id="cg"></div><div class="cq" id="cq"></div><div class="cbs"><button class="cb" id="brb"><span class="em">🌬</span> تنفّس 30 ثانية</button><button class="cb" id="snb"><span class="em">🎧</span> أصوات هادية</button><button class="cb" id="lvb"><span class="em">🕯</span> سيبها هنا</button></div></div></section>
 <div class="hg"><div class="hm">
 <section class="hh hero"><span class="hi" id="hi" style="display:none"></span><div class="ht"><h1>فضفض من غير ما حد يعرفك</h1><p>اكتب اللي جواك باسم مستعار، وناس حقيقيين يسمعوك ويدعموك.</p></div><button class="cta" data-open>✍️ اكتب اعتراف</button></section>
 <section class="hf"><div class="chips" id="f"></div><div id="feed"></div></section></div>
@@ -334,6 +360,13 @@ html.mobile .hs .dq,html.mobile .hs .mdc{margin-bottom:0}html.mobile .dq .k{just
 <main id="adminv" class="view ab"></main></div>
 <button class="fab" data-open aria-label="اكتب اعتراف"><span class="em">✍️</span><span class="t">اكتب اعتراف</span></button>
 <div class="tabs"><button class="on" data-v="home"><i class="em">🏠</i>الرئيسية</button><button data-v="fun"><i class="em">🎯</i>تسلية</button><button data-v="acct"><i class="em">👤</i>حسابي</button><button data-v="about"><i class="em">ℹ️</i>عن فضفض</button><button data-v="adminv" id="tabAdm" style="display:none"><i class="em">🛠</i>الإدارة</button></div>
+<div class="ov" id="snov"><div class="sheet"><div class="grab"></div><h2>أصوات هادية 🎧</h2><small class="hint" style="text-align:start;display:block">بتتولّد جوه موبايلك، من غير إنترنت ومن غير تحميل. اضغط على اللي يريحك.</small>
+<div class="sg"><button class="sx em" data-s="rain">🌧<b>مطر</b></button><button class="sx em" data-s="sea">🌊<b>موج البحر</b></button><button class="sx em" data-s="forest">🌲<b>غابة وعصافير</b></button><button class="sx em" data-s="pad">🎹<b>بيانو هادي</b></button></div>
+<label class="vl"><span class="em">🔈</span><input type="range" id="snv" min="0.05" max="1" step="0.05" value="0.5"><span class="em">🔊</span></label>
+<button class="go" id="snstop" style="display:none;background:#ffffff1a;box-shadow:none">⏹ إيقاف الصوت</button><button class="go" id="snx" style="background:none;box-shadow:none;color:var(--mut)">إغلاق</button>
+<div class="hint" id="snlast"></div><div class="hint">على الآيفون: لو مفيش صوت، اتأكد إن زرار الصامت على الجنب مقفول وارفع الصوت. الصوت مش بيشتغل لوحده أبدًا، بس لما تضغط.</div></div></div>
+<div class="lvov" id="lv"><button class="lvx" id="lvx" aria-label="إغلاق">✕</button><div class="lvc"><div id="lvin"><h2>🕯 سيبها هنا</h2><p>اكتب اللي شايله جواك قبل النوم. الكلام ده <b>بيفضل على موبايلك بس</b>، مش بيتنشر ومش بيتبعت لأي حد، وهيختفي لما تسيبه.</p><textarea id="lvt" rows="6" maxlength="1500" placeholder="اللي مثقّل عليك النهاردة..."></textarea><button class="go" id="lvgo">سيبها هنا</button></div><div class="lvfx" id="lvfx" style="display:none"></div><div id="lvend" style="display:none"><div class="lvm" id="lvmsg"></div><button class="go" id="lvdone">تمام، تصبح على خير</button><button class="lvs" id="lvsh">شاركها كاعتراف مجهول (اختياري)</button></div></div></div>
+<div class="rest" id="rest"><b>كفاية النهاردة، ارتاح 💜</b><span>بقالك فترة طويلة هنا. قوم اشرب مياه وريّح عينيك. هنكون موجودين لما ترجع.</span><div><button id="rstok">هرتاح</button><button id="rstlv">🕯 سيبها هنا</button><button id="rstmore" class="gh">كمّل شوية</button></div></div>
 <div class="ov" id="ov"><div class="sheet"><div class="grab"></div><h2>اكتب اللي جواك</h2><small class="hint" style="text-align:start;display:block">محدش هيعرف إنت مين. هيظهر باسم مستعار.</small>
  <textarea id="t" rows="5" maxlength="2000" placeholder="فضفض هنا..."></textarea>
  <div id="who"></div><div class="qs"><button data-ins="حاسس إن ">حاسس إن...</button><button data-ins="مش عارف أقول لمين بس ">مش عارف أقول لمين...</button><button data-ins="نفسي أقول له ">نفسي أقول له...</button><button data-ins="النهاردة حصل معايا ">النهاردة حصل...</button></div><div class="two"><select id="cat"><option>عاطفية</option><option>زوجية</option><option>عائلية</option><option>شغل</option><option>أصحاب</option><option>أخرى</option></select>
@@ -510,6 +543,7 @@ async function renderDaily(){const el=$("#dq"),i=el.querySelector("input");if(i&
  ${DQ.a.length?"":'<div class="m" style="margin-top:8px;position:relative">كن أول واحد يجاوب 🌱</div>'}
  <div class="foot"><button class="ghost em" data-d="sh">📤 شارك السؤال</button></div></div>`;
  const tot=DQ.m.length+0,cnt=k=>DQ.m.filter(x=>x==k).length,pc=k=>tot?Math.round(cnt(k)/tot*100):0;
+window.applyMood&&applyMood();
  $("#mdc").innerHTML=mine?`<div class="mdc"><h3>مزاج الناس النهاردة</h3>${tot>1?`<div class="likeu">💜 ${Math.max(cnt(mine)-0,1)==1&&tot==1?"إنت أول واحد النهاردة":`${pc(mine)}% حاسين زيك النهاردة`}</div>`:'<div class="likeu">💜 شكرًا إنك شاركت، هنعرفك مين حاسس زيك لما الناس تنضم</div>'}
  ${MOODS.map(([k,e,t])=>`<div class="bar ${k==mine?"me":""}"><span class="em">${e} ${t}</span><span class="t"><i style="width:${pc(k)}%"></i></span><span>${pc(k)}%</span></div>`).join("")}
  <div class="foot" style="margin-top:8px"><button class="ghost em" data-m="sh">📤 شارك مزاجي</button></div></div>`
@@ -658,10 +692,81 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="4.5";
+const VER="4.6";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 
 function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
 addEventListener("resize",dbg);
 document.querySelectorAll(".vstamp").forEach(x=>x.textContent="نسخة "+VER);
+</script>
+<script>
+/* v4.6 wellness: sounds, mood hero, leave-it-here ritual, rest reminder */
+(()=>{
+const LS=localStorage,Q=s=>document.querySelector(s);
+/* ---------- 1. calm sounds (WebAudio, no files) ---------- */
+let ctx=null,master=null,nodes=[],timers=[],cur=null,want=false;
+const SN=[["rain","🌧","مطر"],["sea","🌊","موج البحر"],["forest","🌲","غابة وعصافير"],["pad","🎹","بيانو هادي"]];
+function ac(){if(!ctx){const C=window.AudioContext||window.webkitAudioContext;if(!C)return null;ctx=new C();master=ctx.createGain();master.gain.value=0;master.connect(ctx.destination)}return ctx}
+function noiseBuf(kind){const c=ctx,len=c.sampleRate*3,b=c.createBuffer(1,len,c.sampleRate),d=b.getChannelData(0);let l=0;for(let i=0;i<len;i++){const w=Math.random()*2-1;if(kind=="brown"){l=(l+.02*w)/1.02;d[i]=l*3.5}else d[i]=w}return b}
+function src(kind){const s=ctx.createBufferSource();s.buffer=noiseBuf(kind);s.loop=true;s.start();nodes.push(s);return s}
+function add(n){nodes.push(n);return n}
+function every(fn,a,b){const go=()=>{fn();timers.push(setTimeout(go,a+Math.random()*(b-a)))};timers.push(setTimeout(go,a/2))}
+function clearGraph(){timers.forEach(clearTimeout);timers=[];nodes.forEach(n=>{try{n.stop&&n.stop()}catch(e){}try{n.disconnect()}catch(e){}});nodes=[]}
+function build(k){const c=ctx;
+ if(k=="rain"){const s=src("white"),hp=add(c.createBiquadFilter()),lp=add(c.createBiquadFilter()),g=add(c.createGain());hp.type="highpass";hp.frequency.value=900;lp.type="lowpass";lp.frequency.value=7000;g.gain.value=.35;s.connect(hp);hp.connect(lp);lp.connect(g);g.connect(master);
+  every(()=>{const t=c.currentTime,o=c.createBufferSource();o.buffer=noiseBuf("white");const f=c.createBiquadFilter();f.type="bandpass";f.frequency.value=1500+Math.random()*3500;f.Q.value=3;const e=c.createGain();e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(.25,t+.005);e.gain.exponentialRampToValueAtTime(.0005,t+.08);o.connect(f);f.connect(e);e.connect(master);o.start(t,Math.random()*2,.1)},120,380)}
+ else if(k=="sea"){const s=src("brown"),lp=add(c.createBiquadFilter()),g=add(c.createGain()),l=add(c.createOscillator()),lg=add(c.createGain());lp.type="lowpass";lp.frequency.value=700;g.gain.value=.55;l.frequency.value=.09;lg.gain.value=.4;l.connect(lg);lg.connect(g.gain);l.start();s.connect(lp);lp.connect(g);g.connect(master);
+  const s2=src("white"),h=add(c.createBiquadFilter()),g2=add(c.createGain()),l2=add(c.createOscillator()),lg2=add(c.createGain());h.type="bandpass";h.frequency.value=2200;g2.gain.value=.06;l2.frequency.value=.09;lg2.gain.value=.05;l2.connect(lg2);lg2.connect(g2.gain);l2.start();s2.connect(h);h.connect(g2);g2.connect(master)}
+ else if(k=="forest"){const s=src("brown"),bp=add(c.createBiquadFilter()),g=add(c.createGain());bp.type="bandpass";bp.frequency.value=380;bp.Q.value=.6;g.gain.value=.25;s.connect(bp);bp.connect(g);g.connect(master);
+  every(()=>{const t=c.currentTime,n=1+Math.floor(Math.random()*3),base=2200+Math.random()*1800;for(let i=0;i<n;i++){const o=c.createOscillator(),e=c.createGain(),st=t+i*.16;o.type="sine";o.frequency.setValueAtTime(base,st);o.frequency.exponentialRampToValueAtTime(base*(1.2+Math.random()*.5),st+.09);o.frequency.exponentialRampToValueAtTime(base*.9,st+.14);e.gain.setValueAtTime(0,st);e.gain.linearRampToValueAtTime(.07,st+.02);e.gain.exponentialRampToValueAtTime(.0005,st+.15);o.connect(e);e.connect(master);o.start(st);o.stop(st+.2)}},1800,5200)}
+ else if(k=="pad"){const ch=[[220,261.63,329.63,392],[174.61,220,261.63,349.23],[196,246.94,293.66,392],[164.81,207.65,246.94,329.63]],lp=add(c.createBiquadFilter()),g=add(c.createGain()),tr=add(c.createOscillator()),tg=add(c.createGain());lp.type="lowpass";lp.frequency.value=900;g.gain.value=.5;tr.frequency.value=.12;tg.gain.value=.18;tr.connect(tg);tg.connect(g.gain);tr.start();lp.connect(g);g.connect(master);
+  const os=ch[0].map((f,i)=>{const o=add(c.createOscillator()),og=c.createGain();o.type=i%2?"triangle":"sine";o.frequency.value=f;og.gain.value=.12;o.connect(og);og.connect(lp);o.start();return o});let ci=0;
+  timers.push(setInterval(()=>{ci=(ci+1)%ch.length;os.forEach((o,i)=>o.frequency.setTargetAtTime(ch[ci][i],c.currentTime,1.5))},9000));
+  every(()=>{const t=c.currentTime,f=[523.25,587.33,659.25,783.99][Math.floor(Math.random()*4)],o=c.createOscillator(),e=c.createGain();o.type="sine";o.frequency.value=f;e.gain.setValueAtTime(0,t);e.gain.linearRampToValueAtTime(.05,t+.03);e.gain.exponentialRampToValueAtTime(.0005,t+2.5);o.connect(e);e.connect(master);o.start(t);o.stop(t+2.6)},3500,7000)}}
+function vol(){return Math.pow(parseFloat(LS.sndv||"0.5"),2)*.9}
+async function play(k){const c=ac();if(!c){toast("الأصوات مش مدعومة على المتصفح ده");return}try{await c.resume()}catch(e){}
+ const t=c.currentTime;master.gain.cancelScheduledValues(t);master.gain.setTargetAtTime(0,t,.05);
+ setTimeout(()=>{clearGraph();cur=k;want=true;LS.snd=k;build(k);master.gain.setTargetAtTime(vol(),ctx.currentTime,.8);ui()},cur?250:0)}
+function stop(){want=false;cur=null;if(!ctx){ui();return}master.gain.setTargetAtTime(0,ctx.currentTime,.25);setTimeout(()=>{if(!want){clearGraph();try{ctx.suspend()}catch(e){}}},900);ui()}
+function ui(){const b=Q("#snb");if(b){b.classList.toggle("playing",!!cur);b.innerHTML=cur?'<span class="em">🔊</span> شغّال':'<span class="em">🎧</span> أصوات هادية'}document.querySelectorAll("#snov .sx").forEach(x=>x.classList.toggle("on",x.dataset.s==cur));const sp=Q("#snstop");if(sp)sp.style.display=cur?"":"none"}
+document.addEventListener("visibilitychange",()=>{if(!ctx)return;if(document.hidden){if(want)try{ctx.suspend()}catch(e){}}else if(want){try{ctx.resume()}catch(e){}}});
+const sov=Q("#snov");
+Q("#snb").onclick=()=>{sov.classList.add("on");Q("#snv").value=LS.sndv||"0.5";ui()};
+sov.onclick=e=>{if(e.target==sov)sov.classList.remove("on")};
+sov.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.s)play(b.dataset.s);else if(b.id=="snstop")stop();else if(b.id=="snx")sov.classList.remove("on")});
+Q("#snv").oninput=e=>{LS.sndv=e.target.value;if(ctx&&want)master.gain.setTargetAtTime(vol(),ctx.currentTime,.1)};
+const last=LS.snd;if(last&&SN.some(x=>x[0]==last)){const lb=Q("#snlast");if(lb)lb.textContent="آخر اختيار ليك: "+SN.find(x=>x[0]==last)[2]}
+/* ---------- 2. mood-aware hero ---------- */
+const MM={happy:{ph:39037835,t:["فرحتك حلوة! خليها تكمّل وشاركها مع حد بتحبه 🎉","يوم حلو يستاهل يتحتفل بيه 🎊 مبسوطين معاك!"]},
+ calm:{ph:1423600,t:["رايق؟ حلو. استمتع بالهدوء ده، إنت تستاهله 🌿","الرواقة نعمة. خد وقتك فيها 🍃"]},
+ tired:{ph:35484518,t:["تعبان؟ مش لازم تكمّل بنفس السرعة. خد راحتك، ومش مطلوب منك تثبت حاجة النهاردة 🫶","جسمك وقلبك بيقولوا كفاية شوية. ارتاح من غير ذنب 🤍"]},
+ sad:{ph:35484518,t:["من حقك تزعل، ومش لازم تكون كويس دلوقتي. إحنا هنا معاك 🤍","زعلك مفهوم. فضفض هنا لو حابب، أو سيبها هنا وارتاح 🕯"]},
+ anxious:{ph:16640848,t:["القلق بيعدي. جرب تتنفس معايا 30 ثانية، ببطء، وإحنا جنبك 🌬","خد نفس عميق. إنت أقوى من اللحظة دي وهتعدي. ابدأ بالتنفس 👇"]}};
+let swap=null;
+function applyMood(){const calm=Q("#calm");if(!calm)return;const m=LS["mood"+day()],d=MM[m];["happy","calm","tired","sad","anxious"].forEach(x=>calm.classList.toggle("m-"+x,x==m));
+ const b=Q("#brb");if(b)b.classList.toggle("hl",m=="anxious");
+ if(!d){calm.removeAttribute("data-mood");return}
+ calm.dataset.mood=m;const q=Q("#cq");if(q&&q.dataset.m!=m){q.dataset.m=m;q.textContent=d.t[Math.floor(Date.now()/864e5)%d.t.length]}
+ const bg=calm.querySelector(".cbg");if(bg&&swap!=m){swap=m;const im=new Image();im.onload=()=>{bg.style.backgroundImage=`url(${im.src})`;bg.classList.add("on")};im.src=PX(d.ph,900)}}
+window.applyMood=applyMood;applyMood();
+/* ---------- 3. leave-it-here ritual ---------- */
+const lv=Q("#lv"),LT=Q("#lvt"),GN=["تصبح على خير 🌙 اللي تقلك دلوقتي اتحط هنا، وإنت تستاهل ترتاح.","سيبناها هنا. بكرة هتبقى أخف بإذن الله 🕯","كفاية كده النهاردة. نام هادي، وإنت مش لوحدك 💜","اللي كتبته اتفرد وراح. خد نفس، وعيونك تستريح 🌿"];
+let lvText="";
+function lvOpen(){lvText="";LT.value="";lv.className="lvov on";document.body.style.overflow="hidden";Q("#lvin").style.display="";Q("#lvfx").style.display="none";Q("#lvend").style.display="none";setTimeout(()=>LT.focus(),300)}
+function lvClose(){lv.className="lvov";document.body.style.overflow="";LT.value="";lvText="";Q("#lvfx").textContent="";if(document.activeElement)document.activeElement.blur()}
+function lvGo(){const v=LT.value.trim();if(!v){LT.focus();return}lvText=v;LT.value="";LT.blur();Q("#lvin").style.display="none";const fx=Q("#lvfx");fx.style.display="";fx.textContent="";
+ const w=v.split(/\s+/).slice(0,160);w.forEach(x=>{const s=document.createElement("span");s.textContent=x+" ";s.style.setProperty("--d",(Math.random()*3.2).toFixed(2)+"s");s.style.setProperty("--x",((Math.random()-.5)*60).toFixed(0)+"px");fx.appendChild(s)});
+ requestAnimationFrame(()=>requestAnimationFrame(()=>fx.classList.add("fade")));
+ setTimeout(()=>{fx.style.display="none";fx.classList.remove("fade");fx.textContent="";Q("#lvmsg").textContent=GN[Math.floor(Math.random()*GN.length)];const e=Q("#lvend");e.style.display="";e.classList.add("show")},7200)}
+Q("#lvb").onclick=lvOpen;Q("#lvgo").onclick=lvGo;Q("#lvx").onclick=lvClose;Q("#lvdone").onclick=lvClose;
+Q("#lvsh").onclick=()=>{const t=lvText;lvClose();if(typeof sheet=="function"){sheet(1);setTimeout(()=>{const a=Q("#t");if(a){a.value=t;a.dispatchEvent(new Event("input"))}},300)}};
+/* ---------- 4. rest reminder ---------- */
+let act=Date.now(),acc=0,tk=Date.now(),extra=0;const LIM=()=>window.REST_MS||40*60000;
+["pointerdown","keydown","touchstart","scroll","click"].forEach(ev=>addEventListener(ev,()=>{act=Date.now()},{passive:true,capture:true}));
+setInterval(()=>{const n=Date.now(),dt=n-tk;tk=n;if(dt>120000||n-act>300000){acc=0;extra=0;return}if(document.hidden||n-act>120000)return;acc+=dt;
+ if(acc>=LIM()+extra&&!Q("#rest").classList.contains("on")&&!Q("#lv").classList.contains("on"))Q("#rest").classList.add("on")},5000);
+Q("#rstok").onclick=()=>{Q("#rest").classList.remove("on");acc=0;extra=0;toast("بالراحة عليك، نشوفك وإنت مرتاح 💜")};
+Q("#rstmore").onclick=()=>{Q("#rest").classList.remove("on");extra=acc};
+Q("#rstlv").onclick=()=>{Q("#rest").classList.remove("on");acc=0;extra=0;lvOpen()};
+})();
 </script></body></html>
