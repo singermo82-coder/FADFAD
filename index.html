@@ -1,7 +1,7 @@
 <!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>فضفض | فضفض وارتاح، مكانك آمن</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#14112a">
-<link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="فضفض"><meta name="format-detection" content="telephone=no">
+<title>ونس | فضفضة مجهولة، بهدوء وأمان</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#14112a">
+<link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="ونس"><meta name="format-detection" content="telephone=no">
 <script>
 (function(){var d=document.documentElement,rt=null;
 function scrW(){var w=screen.width,h=screen.height,p=(screen.orientation&&screen.orientation.type)?/portrait/.test(screen.orientation.type):(window.matchMedia&&matchMedia("(orientation:portrait)").matches);return p?Math.min(w,h):Math.max(w,h)}
@@ -332,28 +332,44 @@ html.mobile .calm[data-mood] .cq{display:block;font-size:13px;line-height:1.6}ht
 /* v4.7 avatars */
 .avg{max-height:36dvh;overflow:auto;overscroll-behavior:contain;padding:2px}.avh{grid-column:1/-1;color:var(--mut);font-size:12px;font-weight:700;margin:6px 2px 0}
 .av.ch svg{width:100%;height:100%;display:block}.avb{min-height:44px}
+
+/* v4.9 ونس */
+html .logo .wm{font-size:28px;font-weight:800;padding:0 4px;display:inline-block}html.ph .logo .wm{font-size:24px}html.xs .logo .wm{font-size:22px}
+.logo svg.lg{width:42px;height:42px;animation:none;filter:drop-shadow(0 3px 10px #8b7cf688)}html.ph .logo svg.lg{width:36px;height:36px}html.xs .logo svg.lg{display:block;width:30px;height:30px}
+.lg .o1,.lg .o2,.sp1,.sp2{transform-box:fill-box;transform-origin:center}
+.lg .o1{animation:wbr 4.2s ease-in-out infinite}.lg .o2{animation:wbr 4.2s ease-in-out -2.1s infinite}.lg .o3{animation:tw 3.5s ease-in-out infinite}
+@keyframes wbr{0%,100%{transform:scale(1) translateY(0)}50%{transform:scale(1.1) translateY(-1.5px)}}
+#splash{position:fixed;inset:0;z-index:99999;background:radial-gradient(120% 90% at 50% 30%,#2b1b63,#0d0720 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;pointer-events:none;animation:spo .6s ease 1.9s forwards}
+@keyframes spo{to{opacity:0;visibility:hidden}}
+#splash svg{width:170px;height:170px;overflow:visible}
+#splash .sp1{animation:wbr 3s ease-in-out infinite}#splash .sp2{animation:wbr 3s ease-in-out -1.5s infinite}
+#splash .pt{animation:rise 2.4s ease-in infinite;opacity:0}#splash .pt:nth-of-type(2){animation-delay:-.8s}#splash .pt:nth-of-type(3){animation-delay:-1.6s}
+@keyframes rise{0%{transform:translate(0,0);opacity:0}20%{opacity:.9}100%{transform:translate(38px,-62px);opacity:0}}
+#splash .sn{font-size:64px;font-weight:800;color:#fff;margin-top:6px;animation:spf 1s ease both}#splash .se{font-size:20px;letter-spacing:9px;color:#ffe0a0;font-family:system-ui,sans-serif;font-weight:700;padding-inline-start:9px;animation:spf 1s ease .25s both}
+@keyframes spf{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#splash{display:none!important}}
 </style></head><body>
-<div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="فضفض">
-<svg viewBox="0 0 48 48"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b7cf6"/><stop offset="1" stop-color="#e06ac0"/></linearGradient></defs>
-<path d="M24 3C12 3 3 11 3 22c0 6 3 11 8 14l-2 9 10-5c2 .5 3 .5 5 .5 12 0 21-8 21-19S36 3 24 3z" fill="url(#g)"/>
-<path d="M28 13a10 10 0 1 0 7 17A8 8 0 0 1 28 13z" fill="#fff"/></svg>
-<span><b class="wm" aria-label="فضفض">فضفض<svg class="wk" viewBox="0 0 120 12" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="wg" x1="0" x2="1"><stop offset="0" stop-color="#8b7cf6"/><stop offset="1" stop-color="#ff8aa5"/></linearGradient></defs><path d="M2 6q6-6 12 0t12 0 12 0 12 0 12 0 12 0 12 0 12 0 12 0" fill="none" stroke="url(#wg)" stroke-width="3" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><svg class="wc" viewBox="0 0 20 20" aria-hidden="true"><path d="M13 2a8 8 0 1 0 5 13 6.5 6.5 0 0 1-5-13z" fill="#ffe9a8"/></svg></b><small>فضفض وارتاح، مكانك آمن</small></span></a>
-<div class="sp"></div><div id="fl" title="سلسلة أيامك"></div><button id="bell" aria-label="الإشعارات"><span class="em">🔔</span><b id="bn" style="display:none"></b></button><nav class="nav"><button class="on" data-v="home">الرئيسية</button><button data-v="fun">تسلية</button><button data-v="acct">حسابي</button><button data-v="about">عن فضفض</button><button data-v="adminv" id="navAdm" style="display:none">الإدارة</button></nav>
+<div id="splash" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><radialGradient id="sl1" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe6ff"/><stop offset=".5" stop-color="#b79cff"/><stop offset="1" stop-color="#5a3fb0"/></radialGradient><radialGradient id="sl2" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#fff6cf"/><stop offset=".55" stop-color="#ffd27a"/><stop offset="1" stop-color="#f2994a"/></radialGradient><filter id="sgw"><feGaussianBlur stdDeviation="3"/></filter></defs><circle cx="82" cy="72" r="30" fill="#ffb347" opacity=".25" filter="url(#sgw)"/><circle class="sp1" cx="40" cy="72" r="26" fill="url(#sl1)"/><circle class="sp2" cx="82" cy="76" r="21" fill="url(#sl2)"/><circle class="pt" cx="34" cy="44" r="3" fill="#e6d9ff"/><circle class="pt" cx="42" cy="38" r="2.4" fill="#e6d9ff"/><circle class="pt" cx="28" cy="40" r="2" fill="#e6d9ff"/><circle cx="98" cy="14" r="9" fill="#ffe9a8"/></svg><div class="sn">ونس</div><div class="se">WANAS</div></div><script>try{var sp=document.getElementById("splash");if(sessionStorage.wsp)sp.remove();else{sessionStorage.wsp=1;setTimeout(function(){sp.remove()},2800)}}catch(e){}</script>
+<div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="ونس">
+<svg class="lg" viewBox="0 0 48 48" aria-hidden="true"><defs><radialGradient id="wl1" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe6ff"/><stop offset=".5" stop-color="#b79cff"/><stop offset="1" stop-color="#5a3fb0"/></radialGradient><radialGradient id="wl2" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#fff6cf"/><stop offset=".55" stop-color="#ffd27a"/><stop offset="1" stop-color="#f2994a"/></radialGradient></defs><circle class="o1" cx="16" cy="29" r="11" fill="url(#wl1)"/><circle class="o2" cx="32" cy="30" r="9" fill="url(#wl2)"/><circle class="o3" cx="39" cy="8" r="3.6" fill="#ffe9a8"/></svg>
+<span><b class="wm" aria-label="ونس">ونس</b><small>فضفضة مجهولة، بهدوء وأمان</small></span></a>
+<div class="sp"></div><div id="fl" title="سلسلة أيامك"></div><button id="bell" aria-label="الإشعارات"><span class="em">🔔</span><b id="bn" style="display:none"></b></button><nav class="nav"><button class="on" data-v="home">الرئيسية</button><button data-v="fun">تسلية</button><button data-v="acct">حسابي</button><button data-v="about">عن ونس</button><button data-v="adminv" id="navAdm" style="display:none">الإدارة</button></nav>
 <button id="inst">ثبّت التطبيق</button></div></header>
 <div class="wrap">
 <main id="home" class="view on">
 <section class="calm" id="calm"><div class="cbg"></div><div class="cin"><div class="cg" id="cg"></div><div class="cq" id="cq"></div><div class="cbs"><button class="cb" id="brb"><span class="em">🌬</span> تنفّس 30 ثانية</button><button class="cb" id="snb"><span class="em">🎧</span> أصوات هادية</button><button class="cb" id="lvb"><span class="em">🕯</span> سيبها هنا</button></div></div></section>
 <div class="hg"><div class="hm">
-<section class="hh hero"><span class="hi" id="hi" style="display:none"></span><div class="ht"><h1>فضفض من غير ما حد يعرفك</h1><p>اكتب اللي جواك باسم مستعار، وناس حقيقيين يسمعوك ويدعموك.</p></div><button class="cta" data-open>✍️ اكتب اعتراف</button></section>
+<section class="hh hero"><span class="hi" id="hi" style="display:none"></span><div class="ht"><h1>قول اللي تقيل عليك.. ومحدش هيعرفك</h1><p>اكتب اللي جواك باسم مستعار، وناس حقيقيين يسمعوك ويدعموك.</p></div><button class="cta" data-open>✍️ احكي</button></section>
 <section class="hf"><div class="chips" id="f"></div><div id="feed"></div></section></div>
 <aside class="hs"><div id="dq"></div><div id="mdc"></div><div class="funrow"><button data-go="quiz"><span class="em">🧩</span><b>اختبار الشخصية</b><small>اعرف نسب صفاتك</small></button><button data-go="love"><span class="em">💘</span><b>نسبة التوافق</b><small>بين اسمين، للتسلية</small></button><button data-go="help"><span class="em">🏆</span><b>أكتر المساعدين</b><small>ناس ردودها أفادت غيرها</small></button><button data-go="story"><span class="em">🌟</span><b>قصص نجاح</b><small>حاجات حلوة حصلت بعد الفضفضة</small></button></div><div class="stats" id="stats"></div><div id="mode"></div></aside>
 
 </div>
 </main>
 <main id="about" class="view ab"><div class="phb"><div class="cbg" data-ph="1423600"></div><b>مكان هادي ليك 🌿</b></div><div class="vstamp" style="text-align:center;color:var(--mut);font-size:12px;margin-bottom:6px"></div>
- <div class="card"><h3>🔒 خصوصيتك</h3><p>مفيش إيميل ولا رقم تليفون ولا اسمك الحقيقي. إنت اللي بتختار اسم مستعار وصورة، وتقدر تنشر أي اعتراف باسم عشوائي لو عايز. رقم حسابك مخفي عن أي مستخدم تاني.</p></div>
+ <div class="card"><h3>🕯 ونس <span dir="ltr" style="letter-spacing:3px;color:var(--gold,#ffd27a)">WANAS</span></h3><p>ونس يعني صحبة دافية: حد قاعد جنبك يسمعك. فضفضة مجهولة، بهدوء وأمان.</p></div>
+ <div class="card"><h3>🔒 خصوصيتك</h3><p>مفيش إيميل ولا رقم تليفون ولا اسمك الحقيقي. إنت اللي بتختار اسم مستعار وصورة، وتقدر تنشر أي حكاية باسم عشوائي لو عايز. رقم حسابك مخفي عن أي مستخدم تاني.</p></div>
  
- <div class="card"><h3>🤝 قواعد المجتمع</h3><p>كلنا هنا عشان نسمع ونساعد. الكلام الجارح أو المسيء ممنوع. لو شفت حاجة غلط اضغط بلاغ، ولما توصل 3 بلاغات من ناس مختلفة الاعتراف بيختفي.</p></div>
+ <div class="card"><h3>🤝 قواعد المجتمع</h3><p>كلنا هنا عشان نسمع ونساعد. الكلام الجارح أو المسيء ممنوع. لو شفت حاجة غلط اضغط بلاغ، ولما توصل 3 بلاغات من ناس مختلفة البوست بيختفي.</p></div>
  <div class="card"><h3>📲 تثبيت التطبيق</h3><p>أندرويد وويندوز: من كروم أو إيدج اضغط "ثبّت التطبيق". آيفون: من سفاري اضغط مشاركة ثم "إضافة إلى الشاشة الرئيسية".</p></div>
 <div id="dbg" dir="ltr" style="margin:14px auto;max-width:520px;text-align:center;color:var(--mut);font:11px/1.5 monospace;word-break:break-all"></div></main>
 <main id="fun" class="view ab"></main>
@@ -361,22 +377,22 @@ html.mobile .calm[data-mood] .cq{display:block;font-size:13px;line-height:1.6}ht
 <main id="notif" class="view ab"></main>
 <main id="acct" class="view ab"></main>
 <main id="adminv" class="view ab"></main></div>
-<button class="fab" data-open aria-label="اكتب اعتراف"><span class="em">✍️</span><span class="t">اكتب اعتراف</span></button>
-<div class="tabs"><button class="on" data-v="home"><i class="em">🏠</i>الرئيسية</button><button data-v="fun"><i class="em">🎯</i>تسلية</button><button data-v="acct"><i class="em">👤</i>حسابي</button><button data-v="about"><i class="em">ℹ️</i>عن فضفض</button><button data-v="adminv" id="tabAdm" style="display:none"><i class="em">🛠</i>الإدارة</button></div>
+<button class="fab" data-open aria-label="احكي"><span class="em">✍️</span><span class="t">احكي</span></button>
+<div class="tabs"><button class="on" data-v="home"><i class="em">🏠</i>الرئيسية</button><button data-v="fun"><i class="em">🎯</i>تسلية</button><button data-v="acct"><i class="em">👤</i>حسابي</button><button data-v="about"><i class="em">ℹ️</i>عن ونس</button><button data-v="adminv" id="tabAdm" style="display:none"><i class="em">🛠</i>الإدارة</button></div>
 <div class="ov" id="snov"><div class="sheet"><div class="grab"></div><h2>أصوات هادية 🎧</h2><small class="hint" style="text-align:start;display:block">بتتولّد جوه موبايلك، من غير إنترنت ومن غير تحميل. اضغط على اللي يريحك.</small>
 <div class="sg"><button class="sx em" data-s="rain">🌧<b>مطر</b></button><button class="sx em" data-s="sea">🌊<b>موج البحر</b></button><button class="sx em" data-s="forest">🌲<b>غابة وعصافير</b></button><button class="sx em" data-s="pad">🎹<b>بيانو هادي</b></button></div>
 <label class="vl"><span class="em">🔈</span><input type="range" id="snv" min="0.05" max="1" step="0.05" value="0.5"><span class="em">🔊</span></label>
 <button class="go" id="snstop" style="display:none;background:#ffffff1a;box-shadow:none">⏹ إيقاف الصوت</button><button class="go" id="snx" style="background:none;box-shadow:none;color:var(--mut)">إغلاق</button>
 <div class="hint" id="snlast"></div><div class="hint">على الآيفون: لو مفيش صوت، اتأكد إن زرار الصامت على الجنب مقفول وارفع الصوت. الصوت مش بيشتغل لوحده أبدًا، بس لما تضغط.</div></div></div>
-<div class="lvov" id="lv"><button class="lvx" id="lvx" aria-label="إغلاق">✕</button><div class="lvc"><div id="lvin"><h2>🕯 سيبها هنا</h2><p>اكتب اللي شايله جواك قبل النوم. الكلام ده <b>بيفضل على موبايلك بس</b>، مش بيتنشر ومش بيتبعت لأي حد، وهيختفي لما تسيبه.</p><textarea id="lvt" rows="6" maxlength="1500" placeholder="اللي مثقّل عليك النهاردة..."></textarea><button class="go" id="lvgo">سيبها هنا</button></div><div class="lvfx" id="lvfx" style="display:none"></div><div id="lvend" style="display:none"><div class="lvm" id="lvmsg"></div><button class="go" id="lvdone">تمام، تصبح على خير</button><button class="lvs" id="lvsh">شاركها كاعتراف مجهول (اختياري)</button></div></div></div>
+<div class="lvov" id="lv"><button class="lvx" id="lvx" aria-label="إغلاق">✕</button><div class="lvc"><div id="lvin"><h2>🕯 سيبها هنا</h2><p>اكتب اللي شايله جواك قبل النوم. الكلام ده <b>بيفضل على موبايلك بس</b>، مش بيتنشر ومش بيتبعت لأي حد، وهيختفي لما تسيبه.</p><textarea id="lvt" rows="6" maxlength="1500" placeholder="اللي مثقّل عليك النهاردة..."></textarea><button class="go" id="lvgo">سيبها هنا</button></div><div class="lvfx" id="lvfx" style="display:none"></div><div id="lvend" style="display:none"><div class="lvm" id="lvmsg"></div><button class="go" id="lvdone">تمام، تصبح على خير</button><button class="lvs" id="lvsh">شاركنا كده بشكل مجهول (اختياري)</button></div></div></div>
 <div class="rest" id="rest"><b>كفاية النهاردة، ارتاح 💜</b><span>بقالك فترة طويلة هنا. قوم اشرب مياه وريّح عينيك. هنكون موجودين لما ترجع.</span><div><button id="rstok">هرتاح</button><button id="rstlv">🕯 سيبها هنا</button><button id="rstmore" class="gh">كمّل شوية</button></div></div>
 <div class="ov" id="ov"><div class="sheet"><div class="grab"></div><h2>اكتب اللي جواك</h2><small class="hint" style="text-align:start;display:block">محدش هيعرف إنت مين. هيظهر باسم مستعار.</small>
  <textarea id="t" rows="5" maxlength="2000" placeholder="فضفض هنا..."></textarea>
  <div id="who"></div><div class="qs"><button data-ins="حاسس إن ">حاسس إن...</button><button data-ins="مش عارف أقول لمين بس ">مش عارف أقول لمين...</button><button data-ins="نفسي أقول له ">نفسي أقول له...</button><button data-ins="النهاردة حصل معايا ">النهاردة حصل...</button></div><div class="two"><select id="cat"><option>عاطفية</option><option>زوجية</option><option>عائلية</option><option>شغل</option><option>أصحاب</option><option>أخرى</option></select>
  <select id="int"><option value="advice">عايز نصيحة</option><option value="vent">عايز أفضفض بس</option></select></div>
  <label class="anon" id="anonl"><input type="checkbox" id="anon"> انشر باسم عشوائي مجهول بدل اسمي</label><button class="go" id="send">انشر بشكل مجهول</button><div id="e" class="err hint"></div></div></div>
-<div class="ov" id="sov"><div class="sheet"><div class="grab"></div><h2>شارك مع صحابك</h2><img id="simg" alt=""><div class="shb"><a class="wa" id="swa" target="_blank" rel="noopener">واتساب</a><button class="nat" id="snat">مشاركة الصورة</button><a class="dl" id="sdl" download="fadfad.png">حفظ الصورة</a></div></div></div>
-<div class="ov" id="auv"><div class="sheet"><div class="grab"></div><h2>أهلًا بيك في فضفض</h2>
+<div class="ov" id="sov"><div class="sheet"><div class="grab"></div><h2>شارك مع صحابك</h2><img id="simg" alt=""><div class="shb"><a class="wa" id="swa" target="_blank" rel="noopener">واتساب</a><button class="nat" id="snat">مشاركة الصورة</button><a class="dl" id="sdl" download="wanas.png">حفظ الصورة</a></div></div></div>
+<div class="ov" id="auv"><div class="sheet"><div class="grab"></div><h2>أهلًا بيك في ونس</h2>
 <div class="seg"><button data-au="in" class="on">دخول</button><button data-au="up">حساب جديد</button></div>
 <input class="f" id="auU" autocomplete="username" maxlength="20" placeholder="اسمك المستعار (مش اسمك الحقيقي)">
 <input class="f" id="auP" type="password" autocomplete="current-password" placeholder="كلمة السر (6 حروف على الأقل)">
@@ -522,11 +538,11 @@ async function card({kicker,title,sub}){const W=1080,Hh=1350,cv=document.createE
  c.fillStyle="#fff";c.font=`bold 74px ${F}`;let y=520;for(const ln of wrap(c,title,860).slice(0,6)){c.fillText(ln,540,y);y+=108}
  if(sub){c.font=`46px ${F}`;c.fillStyle="#ffffffdd";y+=30;for(const ln of wrap(c,sub,820).slice(0,3)){c.fillText(ln,540,y);y+=70}}
  c.fillStyle="#ffffff26";const bw=560,bx=(W-bw)/2;c.beginPath();c.roundRect?c.roundRect(bx,1130,bw,100,50):c.rect(bx,1130,bw,100);c.fill();
- c.fillStyle="#fff";c.font=`bold 50px ${F}`;c.fillText("فضفض",540,1196);c.font=`28px ${F}`;c.fillStyle="#ffffffcc";c.fillText("اكتب من غير اسم",540,1270);
+ c.fillStyle="#fff";c.font=`bold 50px ${F}`;c.fillText("ونس",540,1196);c.font=`28px ${F}`;c.fillStyle="#ffffffcc";c.fillText("اكتب من غير اسم",540,1270);
  return new Promise(r=>cv.toBlob(r,"image/png"))}
-async function share(o){const b=await card(o),url=URL.createObjectURL(b),link=location.origin+location.pathname,txt=`${o.title}\n${o.sub||""}\nفضفض: ${link}`.replace(/\n\n/g,"\n");
+async function share(o){const b=await card(o),url=URL.createObjectURL(b),link=location.origin+location.pathname,txt=`${o.title}\n${o.sub||""}\nونس: ${link}`.replace(/\n\n/g,"\n");
  $("#simg").src=url;$("#sdl").href=url;$("#swa").href="https://wa.me/?text="+encodeURIComponent(txt);
- const f=new File([b],"fadfad.png",{type:"image/png"}),can=navigator.canShare&&navigator.canShare({files:[f]});$("#snat").style.display=can?"block":"none";
+ const f=new File([b],"wanas.png",{type:"image/png"}),can=navigator.canShare&&navigator.canShare({files:[f]});$("#snat").style.display=can?"block":"none";
  $("#snat").onclick=()=>navigator.share({files:[f],text:txt,url:link}).catch(()=>{});$("#sov").classList.add("on")}
 // ---- ui
 if(!CLOUD)$("#mode").innerHTML='<div class="note">وضع تجريبي: اللي بتكتبه بيفضل على جهازك بس.</div>';
@@ -562,7 +578,7 @@ async function render(){const ae=document.activeElement;if(ae&&ae.matches("#feed
  ${sh.map(c=>`<div class="c">${av(c.alias,"",c.avatar)}<div><small>${esc(c.alias)}${vb(c.alias)}</small>${esc(c.body)}${hpBtn(c)}</div>${isAdm()?`<span class="adm" data-cid="${c.id}"><button class="ax" data-a="ced">✏️</button><button class="ax" data-a="cdel">🗑</button><button class="ax" data-a="cban">🚫</button></span>`:""}</div>`).join("")}
  <div class="ci"><input placeholder="اكتب رد..." data-in="${p.id}" maxlength="1000" enterkeyhint="send"><button data-a="cm">رد</button></div></div></article>`}).join(""):
  `<div class="empty"><svg viewBox="0 0 190 150"><circle cx="95" cy="80" r="52" fill="#8b7cf6" opacity=".18"/><g class="fl"><path d="M120 40a42 42 0 1 0 22 70 34 34 0 0 1-22-70z" fill="#ffe9a8"/><path d="M92 82q5 5 10 0M112 78q5 5 10 0" stroke="#7a5b18" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="94" cy="96" r="4" fill="#ffb38a" opacity=".7"/></g>
-<text class="tw" x="140" y="42" font-size="18" fill="#fff" font-weight="700">z</text><text class="tw" style="animation-delay:.8s" x="156" y="26" font-size="24" fill="#fff" font-weight="700">Z</text><path class="tw" d="M30 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fff"/></svg><b>الدنيا هادية هنا... لسه</b>كن أول واحد يفضفض النهاردة. اسمك مستخدمش، ومحدش هيعرفك.<br><button data-open>✍️ اكتب أول اعتراف</button></div>`;
+<text class="tw" x="140" y="42" font-size="18" fill="#fff" font-weight="700">z</text><text class="tw" style="animation-delay:.8s" x="156" y="26" font-size="24" fill="#fff" font-weight="700">Z</text><path class="tw" d="M30 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fff"/></svg><b>الدنيا هادية هنا... لسه</b>كن أول واحد يفضفض النهاردة. اسمك مستخدمش، ومحدش هيعرفك.<br><button data-open>✍️ احكي أول حكاية</button></div>`;
  $$("#feed input[data-in]").forEach(i=>{if(drafts[i.dataset.in])i.value=drafts[i.dataset.in]});
  renderDaily();
  $("#stats").innerHTML=D.p.length?`<span>🌙 <b>${D.p.length}</b> بيفضفضوا دلوقتي</span><span>🤝 <b>${D.r.length}</b> دعم</span><span>💬 <b>${D.c.length}</b> رد</span>`:`<span>🌱 مساحة جديدة، ابدأها إنت</span>`}
@@ -573,7 +589,7 @@ $("#feed").onclick=async e=>{const t=e.target.closest("button"),c=t&&t.closest("
  else if(t.dataset.a=="hp"){await API.helpful(t.dataset.cid,t.dataset.on=="1")}
  else if(t.dataset.a=="tg")open[id]=1;
  else if(t.dataset.a=="cm"){const i=c.querySelector("input"),v=i.value.trim();if(v){const q=ident(id);await API.comment({post_id:id,body:v,alias:q.alias,avatar:q.avatar,device_id:dev});delete drafts[id];bump()}}
- else if(t.dataset.a=="rep"&&confirm("تبلّغ عن الاعتراف ده؟")){await API.report(id);toast("شكرًا إنك حميت المكان 🙏")}}catch(x){toast("حصلت مشكلة، جرب تاني")}
+ else if(t.dataset.a=="rep"&&confirm("تبلّغ عن البوست ده؟")){await API.report(id);toast("شكرًا إنك حميت المكان 🙏")}}catch(x){toast("حصلت مشكلة، جرب تاني")}
  busy=0;render()};
 $("#feed").addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.matches("input[data-in]")){e.preventDefault();e.target.closest(".card").querySelector('[data-a="cm"]').click()}});
 $("#send").onclick=async()=>{const v=$("#t").value.trim();$("#e").textContent="";if(!v)return;$("#send").disabled=true;
@@ -603,8 +619,8 @@ document.addEventListener("click",async e=>{const b=e.target.closest("button");i
  if(b.dataset.d=="send"){if(need())return;const i=$("#dq input"),v=i.value.trim();if(!v)return;try{const q=prof&&!anonOn()?{alias:prof.username,avatar:prof.avatar}:{alias:alias(),avatar:null};await X.aPost({day:day(),body:v,alias:q.alias,avatar:q.avatar,device_id:dev});localStorage["ans"+day()]=1;delete dr.v;burst(innerWidth/2,innerHeight*.6,["✨","💜","💭"],10);bump();renderDaily()}catch(x){toast("حصلت مشكلة، جرب تاني")}}
  else if(b.dataset.d=="ad"){if(confirm("تمسح الإجابة دي؟")){try{await rq(`daily_answers?id=eq.${b.dataset.id}`,{method:"DELETE"});renderDaily()}catch(x){toast("حصلت مشكلة")}}}
  else if(b.dataset.d=="lk"){if(need())return;try{await X.like(b.dataset.id,b.dataset.on=="1");renderDaily()}catch(x){}}
- else if(b.dataset.d=="sh")share({kicker:"سؤال النهاردة على فضفض",title:DQ.q,sub:"جاوب من غير اسم، ومحدش هيعرفك"});
- else if(b.dataset.m=="sh"){const m=MOODS.find(x=>x[0]==localStorage["mood"+day()]),t=DQ.m.length,c=DQ.m.filter(x=>x==m[0]).length;share({kicker:"مزاجي النهاردة",title:`حاسس إني ${m[2]}`,sub:t>1?`${Math.round(c/t*100)}% من الناس على فضفض حاسين زيي النهاردة`:"قولنا مزاجك النهاردة على فضفض"})}
+ else if(b.dataset.d=="sh")share({kicker:"سؤال النهاردة على ونس",title:DQ.q,sub:"جاوب من غير اسم، ومحدش هيعرفك"});
+ else if(b.dataset.m=="sh"){const m=MOODS.find(x=>x[0]==localStorage["mood"+day()]),t=DQ.m.length,c=DQ.m.filter(x=>x==m[0]).length;share({kicker:"مزاجي النهاردة",title:`حاسس إني ${m[2]}`,sub:t>1?`${Math.round(c/t*100)}% من الناس على ونس حاسين زيي النهاردة`:"قولنا مزاجك النهاردة على ونس"})}
  else if(b.dataset.m){if(need())return;try{await X.mPost(b.dataset.m);localStorage["mood"+day()]=b.dataset.m;bump();renderDaily()}catch(x){toast("حصلت مشكلة، جرب تاني")}}});
 $("#dq").addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.matches("input")){e.preventDefault();$('[data-d="send"]').click()}});
 $("#sov").onclick=e=>{if(e.target.id=="sov")e.target.classList.remove("on")};
@@ -654,11 +670,11 @@ async function funStory(){const el=$("#fun");el.innerHTML='<div class="qz"><h2>�
 document.addEventListener("click",async e=>{const f=e.target.closest("[data-fs=stsend]");if(!f)return;if(need())return;const v=$("#stx").value.trim();if(v.length<20)return toast("اكتب القصة بتفصيل أكتر شوية");
  try{const q=ident("story");await rq("stories",{method:"POST",body:JSON.stringify({body:v,alias:q.alias,avatar:q.avatar,device_id:dev})});$("#stx").value="";toast("وصلت للمراجعة، شكرًا إنك شاركت 💜")}catch(x){toast("حصلت مشكلة، جرب تاني")}});
 // notifications (in-app only)
-let nUnread=0;const NT={comment:n=>`💬 ${esc(n.actor||"حد")} ردّ على اعترافك`,helpful:()=>"💡 حد حس إن ردك أفاده"};
+let nUnread=0;const NT={comment:n=>`💬 ${esc(n.actor||"حد")} ردّ على حكايتك`,helpful:()=>"💡 حد حس إن ردك أفاده"};
 async function pollN(){if(!CLOUD||!sess||document.hidden)return;try{const r=await rq("notifications?select=id&read=eq.false&limit=50");nUnread=r.length;const b=$("#bn");b.textContent=nUnread>9?"9+":nUnread||"";b.style.display=nUnread?"":"none"}catch(e){}}
 async function renderNotif(){const el=$("#notif");if(!sess){el.innerHTML='<div class="card"><h3>🔔 الإشعارات</h3><p>سجّل دخول عشان تعرف لو حد ردّ عليك.</p><button class="full" data-au2="in">تسجيل دخول</button></div>';return}
  let r=[];try{r=await rq("notifications?select=id,kind,post_id,actor,created_at,read&order=created_at.desc&limit=40")}catch(e){el.innerHTML='<div class="card"><h3>🔔 الإشعارات</h3><p>لسه مش متاحة (محتاجة تحديث السيرفر).</p></div>';return}
- el.innerHTML='<div class="card"><h3>🔔 الإشعارات</h3>'+(r.length?r.map(n=>`<div class="ar" style="${n.read?"opacity:.6":""}"><b>${(NT[n.kind]||(()=>"🔔 جديد"))(n)}</b><div class="m">${ago(n.created_at)}</div></div>`).join(""):'<p>مفيش إشعارات لسه. لما حد يرد على اعترافك هتلاقيه هنا.</p>')+'<p class="m">الإشعارات جوه التطبيق بس، بتتحدّث وإنت فاتحه.</p></div>';
+ el.innerHTML='<div class="card"><h3>🔔 الإشعارات</h3>'+(r.length?r.map(n=>`<div class="ar" style="${n.read?"opacity:.6":""}"><b>${(NT[n.kind]||(()=>"🔔 جديد"))(n)}</b><div class="m">${ago(n.created_at)}</div></div>`).join(""):'<p>مفيش إشعارات لسه. لما حد يرد على حكايتك هتلاقيه هنا.</p>')+'<p class="m">الإشعارات جوه التطبيق بس، بتتحدّث وإنت فاتحه.</p></div>';
  if(r.some(n=>!n.read)){try{await rq("notifications?read=eq.false",{method:"PATCH",body:JSON.stringify({read:true})});pollN()}catch(e){}}}
 $("#bell").onclick=()=>view("notif");$("#notif").onclick=e=>{const b=e.target.closest("[data-au2]");if(b)authOpen(b.dataset.au2)};
 setInterval(pollN,30000);setTimeout(pollN,1500);
@@ -691,7 +707,7 @@ function renderAcct(){const el=$("#acct");if(!CLOUD){el.innerHTML='<div class="c
  if(!prof){el.innerHTML='<div class="card"><h3>👋 أهلًا بيك</h3><p>اعمل حساب باسم مستعار وصورة، من غير إيميل ولا رقم تليفون، وشارك وردّ وكمّل سلسلة أيامك.</p><button class="full" data-au2="up">حساب جديد</button><button class="full sec" data-au2="in">عندي حساب</button></div>';return}
  const s=stk();el.innerHTML=`<div class="card"><div class="me">${av("","",prof.avatar)}<div><b>${esc(prof.username)}</b>${isAdm()?'<span class="badge">👑 أدمن</span>':""}${prof.banned?'<span class="badge">موقوف</span>':""}<div class="m">🔥 أطول سلسلة: ${s.best||0} يوم</div></div></div>
  <label class="anon"><input type="checkbox" id="anon2" ${anonOn()?"checked":""}> انشر دايمًا باسم عشوائي مجهول</label>
- ${isAdm()?'<button class="full" data-v="adminv">🛠 لوحة الإدارة</button>':""}<button class="full sec" data-v="about">عن فضفض وقواعد المجتمع</button><button class="full sec" data-lo="1">تسجيل خروج</button><div class="m" style="text-align:center;margin-top:8px">نسخة ${VER}</div></div>`}
+ ${isAdm()?'<button class="full" data-v="adminv">🛠 لوحة الإدارة</button>':""}<button class="full sec" data-v="about">عن ونس وقواعد المجتمع</button><button class="full sec" data-lo="1">تسجيل خروج</button><div class="m" style="text-align:center;margin-top:8px">نسخة ${VER}</div></div>`}
 $("#acct").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.au2)authOpen(b.dataset.au2);if(b.dataset.lo&&confirm("تسجّل خروج؟"))logout()};
 $("#acct").onchange=e=>{if(e.target.id=="anon2"){localStorage.anon=e.target.checked?"1":"0";who()}};
 
@@ -741,7 +757,7 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="4.8";
+const VER="4.9";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 
 function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
