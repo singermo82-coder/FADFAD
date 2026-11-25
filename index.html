@@ -1,7 +1,17 @@
 <!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>فضفض | فضفض وارتاح، مكانك آمن</title><link rel="manifest" href="manifest.json"><meta name="theme-color" content="#14112a">
-<link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="فضفض"><meta name="format-detection" content="telephone=no">
+<script>
+(function(){var d=document.documentElement,rt=null;
+function scrW(){var w=screen.width,h=screen.height,p=(screen.orientation&&screen.orientation.type)?/portrait/.test(screen.orientation.type):(window.matchMedia&&matchMedia("(orientation:portrait)").matches);return p?Math.min(w,h):Math.max(w,h)}
+function ap(){var iw=window.innerWidth,sw=scrW(),k=1;
+ if(sw&&sw<=1100&&iw>sw*1.2){k=iw/sw;d.style.zoom=k;if(!window.__vm){window.__vm=1;var m=document.querySelector('meta[name=viewport]');if(m)m.remove();m=document.createElement('meta');m.name='viewport';m.content='width=device-width,initial-scale=1,viewport-fit=cover';document.head.appendChild(m)}}else d.style.zoom="";
+ var ew=iw/k,co=!!(window.matchMedia&&matchMedia("(pointer:coarse)").matches);
+ var c=[];if(ew>=860)c.push("dk");if(ew>=700&&ew<860)c.push("tb");if(ew<=480)c.push("ph");if(ew<=380)c.push("xs");if(co||ew<860)c.push("tc");c.push(ew<700?"mobile":ew<860?"tablet":"desktop");
+ d.className=c.join(" ");window.__k=k;window.__ew=Math.round(ew)}
+ap();addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(ap,120)});addEventListener("orientationchange",function(){setTimeout(ap,250)});addEventListener("load",function(){setTimeout(ap,300)})})();
+</script>
 <style>
 :root{--bg:#120f26;--bg2:#1b1738;--card:#211c42;--card2:#2a2452;--line:#ffffff14;--tx:#f3f1ff;--mut:#a9a3d1;--p:#8b7cf6;--p2:#c06cf0;--acc:#ffb38a;--ok:#6fe0b0;--r:20px;--bar:68px}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}
@@ -191,26 +201,84 @@ header,.wrap{position:relative;z-index:1}header{position:sticky}
 .brtx{font-size:30px;font-weight:900;text-shadow:0 2px 14px #000}.brs{font-size:15px;opacity:.85;min-height:24px}
 .brx{position:absolute;z-index:2;top:calc(18px + env(safe-area-inset-top));left:18px;background:#ffffff22;color:#fff;border-radius:50%;width:42px;height:42px;font-size:18px}
 /* desktop */
-@media(min-width:860px){.how{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;overflow:visible}.how div{min-width:0;padding:10px 6px;font-size:12px}.how svg{width:36px;height:36px}}
+html.dk .how{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;overflow:visible}
+html.dk .how div{min-width:0;padding:10px 6px;font-size:12px}
+html.dk .how svg{width:36px;height:36px}
 
-@media(min-width:860px){
- :root{--bar:0px}.tabs{display:none}.nav{display:flex}.fab{bottom:28px;left:28px;width:auto;height:56px;border-radius:30px;padding:0 24px;font-size:17px;font-weight:800;gap:8px;grid-auto-flow:column}
- .wrap{grid-template-columns:minmax(0,1fr);max-width:1120px;align-items:start;padding-bottom:110px}
- .view{display:none}.view.on{display:block}
- .hg{grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"hm hs";align-items:start;gap:16px}.hm{display:grid;grid-area:hm;gap:14px;align-content:start;min-width:0}.hh,.hf{grid-area:auto}.hs{position:sticky;top:84px}.hero h1{font-size:20px}.calm{min-height:200px}.cg{font-size:26px}
- .chips{position:static;flex-wrap:wrap;overflow:visible}.ab{grid-column:1/-1;max-width:700px;margin:auto;width:100%}
- .sheet{border-radius:26px;margin-bottom:6vh;max-height:88vh}.ov{align-items:center}.toast{bottom:90px}
- .grab{display:none}.fab span.t{display:inline}}
-@media(max-width:480px){.hh p{display:none}.hh h1{font-size:16px}.hh .cta{padding:9px 12px;font-size:14px}.calm{min-height:132px}.cg{font-size:20px}.cq{font-size:14px}#inst{padding:6px 10px;font-size:12px}#bell{width:34px;height:34px;font-size:16px}.logo small{display:none}#fl{transform:scale(.9)}}
+
+html.dk{--bar:0px}
+html.dk .tabs{display:none}
+html.dk .nav{display:flex}
+html.dk .fab{bottom:28px;left:28px;width:auto;height:56px;border-radius:30px;padding:0 24px;font-size:17px;font-weight:800;gap:8px;grid-auto-flow:column}
+html.dk .wrap{grid-template-columns:minmax(0,1fr);max-width:1120px;align-items:start;padding-bottom:110px}
+html.dk .view{display:none}
+html.dk .view.on{display:block}
+html.dk .hg{grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"hm hs";align-items:start;gap:16px}
+html.dk .hm{display:grid;grid-area:hm;gap:14px;align-content:start;min-width:0}
+html.dk .hh,html.dk .hf{grid-area:auto}
+html.dk .hs{position:sticky;top:84px}
+html.dk .hero h1{font-size:20px}
+html.dk .calm{min-height:200px}
+html.dk .cg{font-size:26px}
+html.dk .chips{position:static;flex-wrap:wrap;overflow:visible}
+html.dk .ab{grid-column:1/-1;max-width:700px;margin:auto;width:100%}
+html.dk .sheet{border-radius:26px;margin-bottom:6vh;max-height:88vh}
+html.dk .ov{align-items:center}
+html.dk .toast{bottom:90px}
+html.dk .grab{display:none}
+html.dk .fab span.t{display:inline}
+
+html.ph .hh p{display:none}
+html.ph .hh h1{font-size:16px}
+html.ph .hh .cta{padding:9px 12px;font-size:14px}
+html.ph .calm{min-height:132px}
+html.ph .cg{font-size:20px}
+html.ph .cq{font-size:14px}
+html.ph #inst{padding:6px 10px;font-size:12px}
+html.ph #bell{width:34px;height:34px;font-size:16px}
+html.ph .logo small{display:none}
+html.ph #fl{transform:scale(.9)}
+
 
 /* v4.2 fit: phones, tablets */
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}input,textarea,select{font-size:16px}
 .hd{min-width:0;overflow-x:clip}.logo{min-width:0}
-@media(max-width:480px){.hd{gap:6px;padding:8px 10px}.logo{gap:6px}.logo svg{width:34px;height:34px}.logo b{font-size:20px}#fl{padding:4px 8px;font-size:13px}#inst{padding:6px 8px;font-size:11px}.wrap{padding-inline:12px}}
-@media(max-width:380px){.logo svg{display:none}.hh h1{font-size:15px}.hh .cta{padding:8px 10px;font-size:13px}.funrow button b{font-size:12px}}
-@media(pointer:coarse),(max-width:859px){.view button:not(.ax):not(.lk):not(.more):not(.hpb),.sheet button,.ov button{min-height:42px}.pill,.chips button,.hpb,.cb,#bell,#inst,.snd,.opt,.fb,.cta,.mo,.full{min-height:44px}#bell{width:44px;height:44px}.tabs button{min-height:56px}.adm button,.ax{min-width:36px;min-height:36px}}
-@media(min-width:700px) and (max-width:859px){.wrap{max-width:860px;padding-inline:22px}.hg{grid-template-columns:minmax(0,1fr) 280px;grid-template-areas:"hm hs";align-items:start}.hm{display:grid;grid-area:hm;gap:14px;align-content:start;min-width:0}.hh,.hf{grid-area:auto}.hs{position:sticky;top:76px}.hh p{display:block}.calm{min-height:190px}.cg{font-size:26px}.ab{max-width:640px;margin-inline:auto}}
+html.ph .hd{gap:6px;padding:8px 10px}
+html.ph .logo{gap:6px}
+html.ph .logo svg{width:34px;height:34px}
+html.ph .logo b{font-size:20px}
+html.ph #fl{padding:4px 8px;font-size:13px}
+html.ph #inst{padding:6px 8px;font-size:11px}
+html.ph .wrap{padding-inline:12px}
+
+html.xs .logo svg{display:none}
+html.xs .hh h1{font-size:15px}
+html.xs .hh .cta{padding:8px 10px;font-size:13px}
+html.xs .funrow button b{font-size:12px}
+
+html.tc .view button:not(.ax):not(.lk):not(.more):not(.hpb),html.tc .sheet button,html.tc .ov button{min-height:42px}
+html.tc .pill,html.tc .chips button,html.tc .hpb,html.tc .cb,html.tc #bell,html.tc #inst,html.tc .snd,html.tc .opt,html.tc .fb,html.tc .cta,html.tc .mo,html.tc .full{min-height:44px}
+html.tc #bell{width:44px;height:44px}
+html.tc .tabs button{min-height:56px}
+html.tc .adm button,html.tc .ax{min-width:36px;min-height:36px}
+
+html.tb .wrap{max-width:860px;padding-inline:22px}
+html.tb .hg{grid-template-columns:minmax(0,1fr) 280px;grid-template-areas:"hm hs";align-items:start}
+html.tb .hm{display:grid;grid-area:hm;gap:14px;align-content:start;min-width:0}
+html.tb .hh,html.tb .hf{grid-area:auto}
+html.tb .hs{position:sticky;top:76px}
+html.tb .hh p{display:block}
+html.tb .calm{min-height:190px}
+html.tb .cg{font-size:26px}
+html.tb .ab{max-width:640px;margin-inline:auto}
+
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* v4.4 hardening */
+html,body{max-width:100%;overflow-x:hidden}@supports(overflow:clip){html,body{overflow-x:clip}}
+html{width:100%;overscroll-behavior-x:none}body{width:100%;position:relative;min-height:100dvh}
+img,svg,video,canvas,iframe{max-width:100%}
+.sheet{max-height:92dvh}html.dk .sheet{max-height:88dvh}
+.hero,.dq,.calm{overflow:hidden}.burst{max-width:60px}
 </style></head><body>
 <div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="فضفض">
 <svg viewBox="0 0 48 48"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b7cf6"/><stop offset="1" stop-color="#e06ac0"/></linearGradient></defs>
@@ -234,7 +302,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}input,textarea,select{f
  
  <div class="card"><h3>🤝 قواعد المجتمع</h3><p>كلنا هنا عشان نسمع ونساعد. الكلام الجارح أو المسيء ممنوع. لو شفت حاجة غلط اضغط بلاغ، ولما توصل 3 بلاغات من ناس مختلفة الاعتراف بيختفي.</p></div>
  <div class="card"><h3>📲 تثبيت التطبيق</h3><p>أندرويد وويندوز: من كروم أو إيدج اضغط "ثبّت التطبيق". آيفون: من سفاري اضغط مشاركة ثم "إضافة إلى الشاشة الرئيسية".</p></div>
-</main>
+<div id="dbg" dir="ltr" style="margin:14px auto;max-width:520px;text-align:center;color:var(--mut);font:11px/1.5 monospace;word-break:break-all"></div></main>
 <main id="fun" class="view ab"></main>
 <div class="brov" id="br"><div class="cbg"></div><button class="brx" id="brx" aria-label="إغلاق">✕</button><div class="brc"><div class="brring" id="brr"></div><div class="brtx" id="brt">استعد</div><div class="brs" id="brs"></div></div></div>
 <main id="notif" class="view ab"></main>
@@ -561,11 +629,14 @@ $("#adminv").onclick=async e=>{const b=e.target.closest("button");if(!b)return;i
  else if(a=="exs"){await rq("app_settings",{method:"POST",headers:{Prefer:"resolution=merge-duplicates"},body:pj({key:"expiry_hours",value:$("#ex").value})});toast("اتحفظ ✅")}
  else if(a=="dqd"){await rq(`daily_questions?day=eq.${id}`,{method:"DELETE"});renderDaily()}
  }catch(x){toast("مقدرتش أنفذ: "+x.message.slice(0,60))}renderAdmin()};
-const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="acct")renderAcct();if(v=="fun"&&!$("#fun").innerHTML)funMenu();if(v=="notif")renderNotif()};
+const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="acct")renderAcct();if(v=="fun"&&!$("#fun").innerHTML)funMenu();if(v=="notif")renderNotif();if(v=="about")dbg()};
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="4.3";
+const VER="4.4";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
+
+function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
+addEventListener("resize",dbg);
 document.querySelectorAll(".vstamp").forEach(x=>x.textContent="نسخة "+VER);
 </script></body></html>
