@@ -279,6 +279,30 @@ html{width:100%;overscroll-behavior-x:none}body{width:100%;position:relative;min
 img,svg,video,canvas,iframe{max-width:100%}
 .sheet{max-height:92dvh}html.dk .sheet{max-height:88dvh}
 .hero,.dq,.calm{overflow:hidden}.burst{max-width:60px}
+/* v4.5 logo fix */
+html .logo .wm{font-size:26px;padding:0 4px 11px;display:inline-block}
+html.ph .logo .wm{font-size:22px}html.xs .logo .wm{font-size:20px}
+html .logo svg.wc{width:12px;height:12px;left:auto;right:-13px;top:-3px}
+html .logo svg.wk{width:calc(100% - 4px);height:6px;left:2px;right:2px;bottom:0;animation:none;filter:none}
+html.ph .logo svg.wc{width:11px;height:11px}
+/* v4.5 phone home */
+.dq .xp{display:none}
+html.mobile .hs{display:contents}
+html.mobile .hg{gap:10px;grid-template-areas:none}html.mobile .hh,html.mobile .hf,html.mobile .hs{grid-area:auto}
+html.mobile #dq{order:2}html.mobile #mdc{order:3}html.mobile .hs .funrow,html.mobile .hs .stats{display:none}
+html.mobile .hh{order:1}html.mobile .hf{order:4}
+html.mobile .calm{min-height:84px;margin-bottom:10px}html.mobile .calm .cq{display:none}html.mobile .cin{padding:10px 14px;grid-template-columns:1fr auto;align-items:center}html.mobile .cg{font-size:18px}html.mobile .cb{margin:0;padding:6px 12px;font-size:13px}
+html.mobile .hh p{display:none}html.mobile .hero.hh{padding:10px 14px}html.mobile .hh h1{font-size:16px}html.mobile .hh .cta{padding:8px 12px;font-size:14px}
+html.mobile .hs .dq{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 10px;padding:10px 14px}
+html.mobile .hs .dq>*{grid-column:1/-1}
+html.mobile .hs .dq h2{grid-column:1;font-size:15px;margin:0;line-height:1.5}
+html.mobile .dq .xp{display:block;grid-column:2;background:linear-gradient(135deg,#ffb38a,#ff8aa5);color:#2a1f6b;font-weight:800;border-radius:999px;padding:8px 16px;font-size:14px;position:relative}
+html.mobile .dq .k{font-size:11px}
+html.mobile .dq:not(.open)>.row2,html.mobile .dq:not(.open)>.ans,html.mobile .dq:not(.open)>.foot,html.mobile .dq:not(.open)>.likeu,html.mobile .dq:not(.open)>.m{display:none}
+html.mobile .hs .mdc{padding:8px 10px;border-radius:16px}html.mobile .hs .mdc h3{font-size:12px;margin:0 0 6px;color:var(--mut)}
+html.mobile .hs .mo{font-size:0;padding:4px 0;min-height:40px}html.mobile .hs .mo i{font-size:24px}
+html.mobile .hs .mdc .bar{display:none}
+html.mobile .hs .dq,html.mobile .hs .mdc{margin-bottom:0}html.mobile .dq .k{justify-self:start;padding:3px 10px}
 </style></head><body>
 <div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="فضفض">
 <svg viewBox="0 0 48 48"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8b7cf6"/><stop offset="1" stop-color="#e06ac0"/></linearGradient></defs>
@@ -309,7 +333,7 @@ img,svg,video,canvas,iframe{max-width:100%}
 <main id="acct" class="view ab"></main>
 <main id="adminv" class="view ab"></main></div>
 <button class="fab" data-open aria-label="اكتب اعتراف"><span class="em">✍️</span><span class="t">اكتب اعتراف</span></button>
-<div class="tabs"><button class="on" data-v="home"><i class="em">🏠</i>الرئيسية</button><button data-v="acct"><i class="em">👤</i>حسابي</button><button data-v="adminv" id="tabAdm" style="display:none"><i class="em">🛠</i>الإدارة</button><button data-v="fun"><i class="em">🎯</i>تسلية</button></div>
+<div class="tabs"><button class="on" data-v="home"><i class="em">🏠</i>الرئيسية</button><button data-v="fun"><i class="em">🎯</i>تسلية</button><button data-v="acct"><i class="em">👤</i>حسابي</button><button data-v="about"><i class="em">ℹ️</i>عن فضفض</button><button data-v="adminv" id="tabAdm" style="display:none"><i class="em">🛠</i>الإدارة</button></div>
 <div class="ov" id="ov"><div class="sheet"><div class="grab"></div><h2>اكتب اللي جواك</h2><small class="hint" style="text-align:start;display:block">محدش هيعرف إنت مين. هيظهر باسم مستعار.</small>
  <textarea id="t" rows="5" maxlength="2000" placeholder="فضفض هنا..."></textarea>
  <div id="who"></div><div class="qs"><button data-ins="حاسس إن ">حاسس إن...</button><button data-ins="مش عارف أقول لمين بس ">مش عارف أقول لمين...</button><button data-ins="نفسي أقول له ">نفسي أقول له...</button><button data-ins="النهاردة حصل معايا ">النهاردة حصل...</button></div><div class="two"><select id="cat"><option>عاطفية</option><option>زوجية</option><option>عائلية</option><option>شغل</option><option>أصحاب</option><option>أخرى</option></select>
@@ -480,7 +504,7 @@ async function renderDaily(){const el=$("#dq"),i=el.querySelector("input");if(i&
  try{const[q,an,m]=await Promise.all([X.dq(),X.ans(),X.moods()]);DQ={q:q||FQ[Math.floor(Date.now()/864e5)%FQ.length],custom:!!q,a:an.a,l:an.l,mine:an.mine||new Set(),m}}catch(e){return}
  const mine=localStorage["mood"+day()],done=localStorage["ans"+day()];
  {const sg=JSON.stringify([DQ.q,DQ.a,DQ.l,[...DQ.mine],DQ.m,mine,done,isAdm(),prof&&prof.username]);if(sg===dsig&&el.innerHTML)return;dsig=sg}
- el.innerHTML=`<div class="dq"><span class="k"><span class="em">💭</span> سؤال النهاردة</span><h2>${esc(DQ.q)}</h2>
+ const wasOpen=!!el.querySelector(".dq.open");el.innerHTML=`<div class="dq${wasOpen?" open":""}"><span class="k"><span class="em">💭</span> سؤال النهاردة</span><h2>${esc(DQ.q)}</h2><button class="xp" data-d="ex">${done?"الإجابات":"جاوب"} ▾</button>
  ${done?`<div class="likeu">✅ جاوبت النهاردة، شكرًا إنك شاركت</div>`:`<div class="row2"><input placeholder="اكتب إجابتك باسم مستعار..." maxlength="500" enterkeyhint="send"><button class="snd" data-d="send">جاوب</button></div>`}
  ${DQ.a.slice(0,3).map(x=>{const n=DQ.l.filter(y=>y.answer_id==x.id),on=DQ.mine.has(x.id);return`<div class="ans">${av(x.alias,"",x.avatar)}<div><small>${esc(x.alias)}</small>${esc(x.body)}</div>${isAdm()?`<button class="lk" data-d="ad" data-id="${x.id}">🗑</button>`:""}<button class="lk em ${on?"on":""}" data-d="lk" data-id="${x.id}" data-on="${on?1:0}">${on?"❤️":"🤍"} ${n.length||""}</button></div>`}).join("")}
  ${DQ.a.length?"":'<div class="m" style="margin-top:8px;position:relative">كن أول واحد يجاوب 🌱</div>'}
@@ -492,6 +516,7 @@ async function renderDaily(){const el=$("#dq"),i=el.querySelector("input");if(i&
  :`<div class="mdc"><h3>مزاجك النهاردة إيه؟</h3><div class="moods">${MOODS.map(([k,e,t])=>`<button class="mo" data-m="${k}"><i class="em">${e}</i>${t}</button>`).join("")}</div></div>`;
  const ni=el.querySelector("input");if(ni&&dr.v)ni.value=dr.v}
 document.addEventListener("click",async e=>{const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.d=="ex"){const d=b.closest(".dq");d.classList.toggle("open");if(d.classList.contains("open")){const i=d.querySelector("input");if(i)i.focus()}return}
  if(b.dataset.d=="send"){if(need())return;const i=$("#dq input"),v=i.value.trim();if(!v)return;try{const q=prof&&!anonOn()?{alias:prof.username,avatar:prof.avatar}:{alias:alias(),avatar:null};await X.aPost({day:day(),body:v,alias:q.alias,avatar:q.avatar,device_id:dev});localStorage["ans"+day()]=1;delete dr.v;burst(innerWidth/2,innerHeight*.6,["✨","💜","💭"],10);bump();renderDaily()}catch(x){toast("حصلت مشكلة، جرب تاني")}}
  else if(b.dataset.d=="ad"){if(confirm("تمسح الإجابة دي؟")){try{await rq(`daily_answers?id=eq.${b.dataset.id}`,{method:"DELETE"});renderDaily()}catch(x){toast("حصلت مشكلة")}}}
  else if(b.dataset.d=="lk"){if(need())return;try{await X.like(b.dataset.id,b.dataset.on=="1");renderDaily()}catch(x){}}
@@ -633,7 +658,7 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="4.4";
+const VER="4.5";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 
 function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
