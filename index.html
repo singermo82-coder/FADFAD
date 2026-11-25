@@ -169,7 +169,7 @@ header,.wrap{position:relative;z-index:1}header{position:sticky}
 .hpb{background:#ffffff0f;border:1px solid var(--line);color:var(--mut);border-radius:99px;padding:3px 10px;font-size:12px;margin-top:5px}.hpb.on{background:#ffd86b2e;color:#ffd86b;border-color:#ffd86b66}.hp2{color:#ffd86b;font-size:12px;margin-top:4px}
 
 /* v4.2 home */
-.hg{display:grid;gap:14px;grid-template-columns:minmax(0,1fr);grid-template-areas:"hh" "hs" "hf"}.hh{grid-area:hh}.hs{grid-area:hs;display:grid;gap:12px;min-width:0}.hf{grid-area:hf;min-width:0}
+.hm{display:contents}.hg{display:grid;gap:14px;grid-template-columns:minmax(0,1fr);grid-template-areas:"hh" "hs" "hf"}.hh{grid-area:hh}.hs{grid-area:hs;display:grid;gap:12px;min-width:0}.hf{grid-area:hf;min-width:0}
 .hs>*{min-width:0}.hs #dq,.hs #mdc{margin:0}
 .hero.hh{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-radius:20px;animation:flow 14s linear infinite;box-shadow:0 10px 26px #5b45d644}
 .hh .ht{position:relative;min-width:0}.hh h1{margin:0;font-size:18px;line-height:1.3}.hh p{margin:2px 0 0;font-size:13px;opacity:.9;max-width:none}
@@ -197,7 +197,7 @@ header,.wrap{position:relative;z-index:1}header{position:sticky}
  :root{--bar:0px}.tabs{display:none}.nav{display:flex}.fab{bottom:28px;left:28px;width:auto;height:56px;border-radius:30px;padding:0 24px;font-size:17px;font-weight:800;gap:8px;grid-auto-flow:column}
  .wrap{grid-template-columns:minmax(0,1fr);max-width:1120px;align-items:start;padding-bottom:110px}
  .view{display:none}.view.on{display:block}
- .hg{grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"hh hs" "hf hs";align-items:start;gap:16px}.hs{position:sticky;top:84px}.hero h1{font-size:20px}.calm{min-height:200px}.cg{font-size:26px}
+ .hg{grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"hm hs";align-items:start;gap:16px}.hm{display:grid;grid-area:hm;gap:14px;align-content:start;min-width:0}.hh,.hf{grid-area:auto}.hs{position:sticky;top:84px}.hero h1{font-size:20px}.calm{min-height:200px}.cg{font-size:26px}
  .chips{position:static;flex-wrap:wrap;overflow:visible}.ab{grid-column:1/-1;max-width:700px;margin:auto;width:100%}
  .sheet{border-radius:26px;margin-bottom:6vh;max-height:88vh}.ov{align-items:center}.toast{bottom:90px}
  .grab{display:none}.fab span.t{display:inline}}
@@ -209,7 +209,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}input,textarea,select{f
 @media(max-width:480px){.hd{gap:6px;padding:8px 10px}.logo{gap:6px}.logo svg{width:34px;height:34px}.logo b{font-size:20px}#fl{padding:4px 8px;font-size:13px}#inst{padding:6px 8px;font-size:11px}.wrap{padding-inline:12px}}
 @media(max-width:380px){.logo svg{display:none}.hh h1{font-size:15px}.hh .cta{padding:8px 10px;font-size:13px}.funrow button b{font-size:12px}}
 @media(pointer:coarse),(max-width:859px){.view button:not(.ax):not(.lk):not(.more):not(.hpb),.sheet button,.ov button{min-height:42px}.pill,.chips button,.hpb,.cb,#bell,#inst,.snd,.opt,.fb,.cta,.mo,.full{min-height:44px}#bell{width:44px;height:44px}.tabs button{min-height:56px}.adm button,.ax{min-width:36px;min-height:36px}}
-@media(min-width:700px) and (max-width:859px){.wrap{max-width:860px;padding-inline:22px}.hg{grid-template-columns:minmax(0,1fr) 280px;grid-template-areas:"hh hs" "hf hs";align-items:start}.hs{position:sticky;top:76px}.hh p{display:block}.calm{min-height:190px}.cg{font-size:26px}.ab{max-width:640px;margin-inline:auto}}
+@media(min-width:700px) and (max-width:859px){.wrap{max-width:860px;padding-inline:22px}.hg{grid-template-columns:minmax(0,1fr) 280px;grid-template-areas:"hm hs";align-items:start}.hm{display:grid;grid-area:hm;gap:14px;align-content:start;min-width:0}.hh,.hf{grid-area:auto}.hs{position:sticky;top:76px}.hh p{display:block}.calm{min-height:190px}.cg{font-size:26px}.ab{max-width:640px;margin-inline:auto}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head><body>
 <div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="فضفض">
@@ -222,10 +222,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}input,textarea,select{f
 <div class="wrap">
 <main id="home" class="view on">
 <section class="calm" id="calm"><div class="cbg"></div><div class="cin"><div class="cg" id="cg"></div><div class="cq" id="cq"></div><button class="cb" id="brb"><span class="em">🌬</span> تنفّس معايا 30 ثانية</button></div></section>
-<div class="hg">
+<div class="hg"><div class="hm">
 <section class="hh hero"><span class="hi" id="hi" style="display:none"></span><div class="ht"><h1>فضفض من غير ما حد يعرفك</h1><p>اكتب اللي جواك باسم مستعار، وناس حقيقيين يسمعوك ويدعموك.</p></div><button class="cta" data-open>✍️ اكتب اعتراف</button></section>
+<section class="hf"><div class="chips" id="f"></div><div id="feed"></div></section></div>
 <aside class="hs"><div id="dq"></div><div id="mdc"></div><div class="funrow"><button data-go="quiz"><span class="em">🧩</span><b>اختبار الشخصية</b><small>اعرف نسب صفاتك</small></button><button data-go="love"><span class="em">💘</span><b>نسبة التوافق</b><small>بين اسمين، للتسلية</small></button><button data-go="help"><span class="em">🏆</span><b>أكتر المساعدين</b><small>ناس ردودها أفادت غيرها</small></button><button data-go="story"><span class="em">🌟</span><b>قصص نجاح</b><small>حاجات حلوة حصلت بعد الفضفضة</small></button></div><div class="stats" id="stats"></div><div id="mode"></div></aside>
-<section class="hf"><div class="chips" id="f"></div><div id="feed"></div></section>
+
 </div>
 </main>
 <main id="about" class="view ab"><div class="phb"><div class="cbg" data-ph="1423600"></div><b>مكان هادي ليك 🌿</b></div><div class="vstamp" style="text-align:center;color:var(--mut);font-size:12px;margin-bottom:6px"></div>
@@ -564,7 +565,7 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="4.2";
+const VER="4.3";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 document.querySelectorAll(".vstamp").forEach(x=>x.textContent="نسخة "+VER);
 </script></body></html>
