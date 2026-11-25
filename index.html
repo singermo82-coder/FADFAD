@@ -167,18 +167,49 @@ header,.wrap{position:relative;z-index:1}header{position:sticky}
 #inst{white-space:nowrap}.logo small{white-space:nowrap;font-size:11px}#bell{flex:none;position:relative;background:#ffffff12;border-radius:50%;width:38px;height:38px;display:grid;place-items:center;border:1px solid var(--line);color:var(--tx);font-size:18px;margin-inline:2px}#bell b{position:absolute;top:-3px;right:-3px;background:#ff5a8a;color:#fff;border-radius:99px;font-size:11px;min-width:17px;height:17px;line-height:17px;text-align:center}
 .vb{display:inline-block;margin-inline-start:6px;background:#6fe0b022;color:#6fe0b0;border-radius:99px;padding:0 8px;font-size:11px;font-weight:700}
 .hpb{background:#ffffff0f;border:1px solid var(--line);color:var(--mut);border-radius:99px;padding:3px 10px;font-size:12px;margin-top:5px}.hpb.on{background:#ffd86b2e;color:#ffd86b;border-color:#ffd86b66}.hp2{color:#ffd86b;font-size:12px;margin-top:4px}
+
+/* v4.2 home */
+.hg{display:grid;gap:14px;grid-template-columns:minmax(0,1fr);grid-template-areas:"hh" "hs" "hf"}.hh{grid-area:hh}.hs{grid-area:hs;display:grid;gap:12px;min-width:0}.hf{grid-area:hf;min-width:0}
+.hs>*{min-width:0}.hs #dq,.hs #mdc{margin:0}
+.hero.hh{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-radius:20px;animation:flow 14s linear infinite;box-shadow:0 10px 26px #5b45d644}
+.hh .ht{position:relative;min-width:0}.hh h1{margin:0;font-size:18px;line-height:1.3}.hh p{margin:2px 0 0;font-size:13px;opacity:.9;max-width:none}
+.hh .cta{flex:none;padding:10px 16px;border-radius:14px;font-size:15px;white-space:nowrap}
+.calm{position:relative;overflow:hidden;border-radius:24px;min-height:150px;margin-bottom:14px;background:linear-gradient(135deg,#2a2a6a,#4a5aa8 55%,#7a8fc8);box-shadow:0 14px 36px #0005;border:1px solid #ffffff22}
+.cbg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s}.cbg.on{opacity:1}
+.calm:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0c0a1fcc,#0c0a1f55 70%,#0c0a1f33)}
+.cin{position:relative;z-index:1;padding:16px 18px;display:grid;gap:6px;align-content:end;min-height:inherit;text-shadow:0 2px 12px #000a}
+.cg{font-size:22px;font-weight:900}.cq{font-size:15px;line-height:1.7;opacity:.95;max-width:560px}
+.cb{justify-self:start;margin-top:6px;background:#ffffff26;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid #ffffff55;color:#fff;border-radius:999px;padding:8px 16px;font-weight:700;font-size:14px;text-shadow:none}.cb:active{transform:scale(.96)}
+.hs .dq{padding:14px;border-radius:20px}.hs .dq h2{font-size:17px;margin:6px 0}.hs .mdc{padding:12px;border-radius:18px}.hs .mdc h3{font-size:15px;margin-bottom:8px}.hs .mo{padding:6px 0;font-size:11px}.hs .mo i{font-size:22px}.hs .moods{gap:5px}
+.hs .funrow{gap:8px;margin:0}.hs .funrow button{padding:10px 6px;border-radius:16px}.hs .funrow button .em{font-size:22px}.hs .funrow b{font-size:13px}.hs .funrow small{display:none}
+.hs .stats{margin:0}
+.phb{position:relative;overflow:hidden;border-radius:20px;height:110px;margin-bottom:12px;background:linear-gradient(135deg,#264a4a,#4a7a8a)}.phb .cbg{opacity:0}.phb .cbg.on{opacity:1}.phb:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0c0a1f99,#0c0a1f22)}.phb b{position:absolute;z-index:1;right:16px;bottom:12px;font-size:19px;text-shadow:0 2px 10px #000a}
+.brov{position:fixed;inset:0;z-index:90;display:none;place-items:center;background:#0a0818;overflow:hidden}.brov.on{display:grid}
+.brov .cbg{opacity:.55}.brov:after{content:"";position:absolute;inset:0;background:radial-gradient(circle,#0a081800,#0a0818dd 80%)}
+.brc{position:relative;z-index:1;display:grid;place-items:center;gap:26px;text-align:center}
+.brring{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff9,#9a8cf6aa 55%,#5b45d688);box-shadow:0 0 60px #8b7cf6aa;transform:scale(.7);transition:transform 4s ease-in-out}.brring.in{transform:scale(1.5)}.brring.out{transform:scale(.7);transition-duration:6s}
+.brtx{font-size:30px;font-weight:900;text-shadow:0 2px 14px #000}.brs{font-size:15px;opacity:.85;min-height:24px}
+.brx{position:absolute;z-index:2;top:calc(18px + env(safe-area-inset-top));left:18px;background:#ffffff22;color:#fff;border-radius:50%;width:42px;height:42px;font-size:18px}
 /* desktop */
 @media(min-width:860px){.how{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;overflow:visible}.how div{min-width:0;padding:10px 6px;font-size:12px}.how svg{width:36px;height:36px}}
 
 @media(min-width:860px){
  :root{--bar:0px}.tabs{display:none}.nav{display:flex}.fab{bottom:28px;left:28px;width:auto;height:56px;border-radius:30px;padding:0 24px;font-size:17px;font-weight:800;gap:8px;grid-auto-flow:column}
- .wrap{grid-template-columns:320px 1fr;align-items:start;padding-bottom:110px}
- .view{display:none}.view.on{display:block}#home.on{display:contents}#home:not(.on){display:none}
- .side{position:sticky;top:84px}.hero{padding:26px}.hero h1{font-size:26px}
+ .wrap{grid-template-columns:minmax(0,1fr);max-width:1120px;align-items:start;padding-bottom:110px}
+ .view{display:none}.view.on{display:block}
+ .hg{grid-template-columns:minmax(0,1fr) 310px;grid-template-areas:"hh hs" "hf hs";align-items:start;gap:16px}.hs{position:sticky;top:84px}.hero h1{font-size:20px}.calm{min-height:200px}.cg{font-size:26px}
  .chips{position:static;flex-wrap:wrap;overflow:visible}.ab{grid-column:1/-1;max-width:700px;margin:auto;width:100%}
  .sheet{border-radius:26px;margin-bottom:6vh;max-height:88vh}.ov{align-items:center}.toast{bottom:90px}
  .grab{display:none}.fab span.t{display:inline}}
-@media(max-width:480px){#inst{padding:6px 10px;font-size:12px}#bell{width:34px;height:34px;font-size:16px}.logo small{display:none}#fl{transform:scale(.9)}}
+@media(max-width:480px){.hh p{display:none}.hh h1{font-size:16px}.hh .cta{padding:9px 12px;font-size:14px}.calm{min-height:132px}.cg{font-size:20px}.cq{font-size:14px}#inst{padding:6px 10px;font-size:12px}#bell{width:34px;height:34px;font-size:16px}.logo small{display:none}#fl{transform:scale(.9)}}
+
+/* v4.2 fit: phones, tablets */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}input,textarea,select{font-size:16px}
+.hd{min-width:0;overflow-x:clip}.logo{min-width:0}
+@media(max-width:480px){.hd{gap:6px;padding:8px 10px}.logo{gap:6px}.logo svg{width:34px;height:34px}.logo b{font-size:20px}#fl{padding:4px 8px;font-size:13px}#inst{padding:6px 8px;font-size:11px}.wrap{padding-inline:12px}}
+@media(max-width:380px){.logo svg{display:none}.hh h1{font-size:15px}.hh .cta{padding:8px 10px;font-size:13px}.funrow button b{font-size:12px}}
+@media(pointer:coarse),(max-width:859px){.view button:not(.ax):not(.lk):not(.more):not(.hpb),.sheet button,.ov button{min-height:42px}.pill,.chips button,.hpb,.cb,#bell,#inst,.snd,.opt,.fb,.cta,.mo,.full{min-height:44px}#bell{width:44px;height:44px}.tabs button{min-height:56px}.adm button,.ax{min-width:36px;min-height:36px}}
+@media(min-width:700px) and (max-width:859px){.wrap{max-width:860px;padding-inline:22px}.hg{grid-template-columns:minmax(0,1fr) 280px;grid-template-areas:"hh hs" "hf hs";align-items:start}.hs{position:sticky;top:76px}.hh p{display:block}.calm{min-height:190px}.cg{font-size:26px}.ab{max-width:640px;margin-inline:auto}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head><body>
 <div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="فضفض">
@@ -190,29 +221,21 @@ header,.wrap{position:relative;z-index:1}header{position:sticky}
 <button id="inst">ثبّت التطبيق</button></div></header>
 <div class="wrap">
 <main id="home" class="view on">
- <aside class="side"><section class="hero"><span class="hi" id="hi">أهلًا بيك</span><svg class="art" viewBox="0 0 250 150" aria-hidden="true"><defs><linearGradient id="bb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e5defe"/></linearGradient><linearGradient id="b2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd6a8"/><stop offset="1" stop-color="#ff9fb8"/></linearGradient></defs>
-<g class="fl"><path d="M22 22h112a14 14 0 0 1 14 14v38a14 14 0 0 1-14 14H70l-22 18v-18H22a14 14 0 0 1-14-14V36a14 14 0 0 1 14-14z" fill="url(#bb)"/>
-<circle class="dt" cx="48" cy="55" r="6" fill="#8b7cf6"/><circle class="dt" cx="78" cy="55" r="6" fill="#b06cf0"/><circle class="dt" cx="108" cy="55" r="6" fill="#e06ac0"/></g>
-<g class="fl2"><path d="M128 78h94a14 14 0 0 1 14 14v26a14 14 0 0 1-14 14h-18v16l-20-16h-56a14 14 0 0 1-14-14V92a14 14 0 0 1 14-14z" fill="url(#b2)"/>
-<path d="M175 118c-14-9-20-15-20-22a9 9 0 0 1 17-4 9 9 0 0 1 17 4c0 7-6 13-14 22z" fill="#fff" transform="translate(7 -4) scale(.9)"/></g>
-<path class="tw" d="M214 14a15 15 0 1 0 10 26 12 12 0 0 1-10-26z" fill="#fff6c8"/>
-<path class="tw" d="M190 40l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z" fill="#fff"/><path class="tw" style="animation-delay:1s" d="M20 120l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff"/>
-<path class="tw" style="animation-delay:.6s" d="M232 70l1.8 4 4 1.8-4 1.8-1.8 4-1.8-4-4-1.8 4-1.8z" fill="#ffe3f4"/></svg><h1>فضفض من غير ما حد يعرفك</h1>
-  <p>مساحة آمنة تكتب فيها اللي جواك، وناس حقيقيين يسمعوك ويدعموك. من غير اسمك الحقيقي، ولا إيميل، ولا رقم تليفون.</p>
-  <button class="cta" data-open>✍️ اكتب اعتراف</button>
-  <div class="pts"><span>🔒 من غير اسمك الحقيقي</span><span>🛡️ مكان آمن ومحترم</span><span>🤝 دعم مش أحكام</span></div></section>
-  <div class="stats" id="stats"></div><div class="how"><div><svg viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="6" fill="#8b7cf6"/><path d="M15 16h18M15 23h18M15 30h10" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg><b>اكتب</b>اللي جواك بحرية</div>
-<div><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="19" fill="#e06ac0"/><circle cx="17" cy="21" r="3" fill="#fff"/><circle cx="31" cy="21" r="3" fill="#fff"/><path d="M16 31q8 7 16 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M6 20q18-22 36 0" stroke="#fff3" stroke-width="5" fill="none"/></svg><b>اسم مستعار</b>محدش يعرفك</div>
-<div><svg viewBox="0 0 48 48"><path d="M24 42C8 31 6 21 11 15a9 9 0 0 1 13 2 9 9 0 0 1 13-2c5 6 3 16-13 27z" fill="#ff8aa5"/></svg><b>دعم</b>ناس تسمعك وتشجعك</div></div><div id="mode"></div></aside>
- <section><div id="dq"></div><div id="mdc"></div><div class="funrow"><button data-go="quiz"><span class="em">🧩</span><b>اختبار الشخصية</b><small>اعرف نسب صفاتك</small></button><button data-go="love"><span class="em">💘</span><b>نسبة التوافق</b><small>بين اسمين، للتسلية</small></button><button data-go="help"><span class="em">🏆</span><b>أكتر المساعدين</b><small>ناس ردودها أفادت غيرها</small></button><button data-go="story"><span class="em">🌟</span><b>قصص نجاح</b><small>حاجات حلوة حصلت بعد الفضفضة</small></button></div><div class="chips" id="f"></div><div id="feed"></div></section>
+<section class="calm" id="calm"><div class="cbg"></div><div class="cin"><div class="cg" id="cg"></div><div class="cq" id="cq"></div><button class="cb" id="brb"><span class="em">🌬</span> تنفّس معايا 30 ثانية</button></div></section>
+<div class="hg">
+<section class="hh hero"><span class="hi" id="hi" style="display:none"></span><div class="ht"><h1>فضفض من غير ما حد يعرفك</h1><p>اكتب اللي جواك باسم مستعار، وناس حقيقيين يسمعوك ويدعموك.</p></div><button class="cta" data-open>✍️ اكتب اعتراف</button></section>
+<aside class="hs"><div id="dq"></div><div id="mdc"></div><div class="funrow"><button data-go="quiz"><span class="em">🧩</span><b>اختبار الشخصية</b><small>اعرف نسب صفاتك</small></button><button data-go="love"><span class="em">💘</span><b>نسبة التوافق</b><small>بين اسمين، للتسلية</small></button><button data-go="help"><span class="em">🏆</span><b>أكتر المساعدين</b><small>ناس ردودها أفادت غيرها</small></button><button data-go="story"><span class="em">🌟</span><b>قصص نجاح</b><small>حاجات حلوة حصلت بعد الفضفضة</small></button></div><div class="stats" id="stats"></div><div id="mode"></div></aside>
+<section class="hf"><div class="chips" id="f"></div><div id="feed"></div></section>
+</div>
 </main>
-<main id="about" class="view ab"><div class="vstamp" style="text-align:center;color:var(--mut);font-size:12px;margin-bottom:6px"></div>
+<main id="about" class="view ab"><div class="phb"><div class="cbg" data-ph="1423600"></div><b>مكان هادي ليك 🌿</b></div><div class="vstamp" style="text-align:center;color:var(--mut);font-size:12px;margin-bottom:6px"></div>
  <div class="card"><h3>🔒 خصوصيتك</h3><p>مفيش إيميل ولا رقم تليفون ولا اسمك الحقيقي. إنت اللي بتختار اسم مستعار وصورة، وتقدر تنشر أي اعتراف باسم عشوائي لو عايز. رقم حسابك مخفي عن أي مستخدم تاني.</p></div>
  
  <div class="card"><h3>🤝 قواعد المجتمع</h3><p>كلنا هنا عشان نسمع ونساعد. الكلام الجارح أو المسيء ممنوع. لو شفت حاجة غلط اضغط بلاغ، ولما توصل 3 بلاغات من ناس مختلفة الاعتراف بيختفي.</p></div>
  <div class="card"><h3>📲 تثبيت التطبيق</h3><p>أندرويد وويندوز: من كروم أو إيدج اضغط "ثبّت التطبيق". آيفون: من سفاري اضغط مشاركة ثم "إضافة إلى الشاشة الرئيسية".</p></div>
 </main>
 <main id="fun" class="view ab"></main>
+<div class="brov" id="br"><div class="cbg"></div><button class="brx" id="brx" aria-label="إغلاق">✕</button><div class="brc"><div class="brring" id="brr"></div><div class="brtx" id="brt">استعد</div><div class="brs" id="brs"></div></div></div>
 <main id="notif" class="view ab"></main>
 <main id="acct" class="view ab"></main>
 <main id="adminv" class="view ab"></main></div>
@@ -236,7 +259,7 @@ header,.wrap{position:relative;z-index:1}header{position:sticky}
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],CFG=window.FADFAD||{},CLOUD=!!(CFG.SUPABASE_URL&&CFG.SUPABASE_KEY);
 let CL=[{name:"عاطفية",emoji:"💕",color:"#ff7aa8"},{name:"زوجية",emoji:"💍",color:"#c06cf0"},{name:"عائلية",emoji:"🏡",color:"#6fe0b0"},{name:"شغل",emoji:"💼",color:"#ffb38a"},{name:"أصحاب",emoji:"👥",color:"#6cc4ff"},{name:"أخرى",emoji:"🌀",color:"#a9a3d1"}];
-const CATS=()=>["الكل",...CL.map(c=>c.name)],KINDS={same:"🤝 مريت بنفس الموقف",hug:"🤗 محتاج حضن",tip:"💡 نصيحة"};
+const CATS=()=>["الكل",...CL.map(c=>c.name)],KINDS={same:"🤝 مريت بنفس الموقف",hug:"🤗 محتاج حضن",tip:"💡 نصيحة",feel:"🤍 حاسس بيك"};
 const dev0=localStorage.dev||(localStorage.dev=crypto.randomUUID());let sess=JSON.parse(localStorage.sess||"null"),prof=JSON.parse(localStorage.prof||"null");
 let dev=sess?sess.uid:dev0,cat="الكل",open={},busy=0,first=1;const isAdm=()=>!!(prof&&prof.role=="admin");
 const A1=["ظل","نجم","قمر","غيمة","نسمة","طيف","شمعة","موجة"],A2=["حزين","هادي","تايه","صبور","حالم","وحيد","شجاع","طيب"],EM=["🌙","⭐","🍃","🕊️","🌧️","🔥","🌿","☁️"];
@@ -371,7 +394,7 @@ async function render(){const ae=document.activeElement;if(ae&&ae.matches("#feed
 $("#feed").onclick=async e=>{const t=e.target.closest("button"),c=t&&t.closest(".card");if(!c||busy||t.dataset.open!==undefined)return;if(t.closest(".c")&&t.dataset.cid===undefined&&!t.dataset.a)return;const id=c.dataset.id;busy=1;
  try{if(["aed","adel","aban","ced","cdel","cban"].includes(t.dataset.a)){await adminFeed(t,id)}
  else if(t.dataset.a!="tg"&&need()){busy=0;return}
- else if(t.dataset.k){if(t.dataset.on!="1"){const r=t.getBoundingClientRect();burst(r.left+r.width/2,r.top,{same:["🤝","✨"],hug:["🤗","💜","💗"],tip:["💡","✨"]}[t.dataset.k],7)}await API.react(id,t.dataset.k,t.dataset.on=="1")}
+ else if(t.dataset.k){if(t.dataset.on!="1"){const r=t.getBoundingClientRect();burst(r.left+r.width/2,r.top,{same:["🤝","✨"],hug:["🤗","💜","💗"],tip:["💡","✨"],feel:["🤍","💗","✨"]}[t.dataset.k],7)}await API.react(id,t.dataset.k,t.dataset.on=="1")}
  else if(t.dataset.a=="hp"){await API.helpful(t.dataset.cid,t.dataset.on=="1")}
  else if(t.dataset.a=="tg")open[id]=1;
  else if(t.dataset.a=="cm"){const i=c.querySelector("input"),v=i.value.trim();if(v){const q=ident(id);await API.comment({post_id:id,body:v,alias:q.alias,avatar:q.avatar,device_id:dev});delete drafts[id];bump()}}
@@ -390,7 +413,7 @@ async function renderDaily(){const el=$("#dq"),i=el.querySelector("input");if(i&
  {const sg=JSON.stringify([DQ.q,DQ.a,DQ.l,[...DQ.mine],DQ.m,mine,done,isAdm(),prof&&prof.username]);if(sg===dsig&&el.innerHTML)return;dsig=sg}
  el.innerHTML=`<div class="dq"><span class="k"><span class="em">💭</span> سؤال النهاردة</span><h2>${esc(DQ.q)}</h2>
  ${done?`<div class="likeu">✅ جاوبت النهاردة، شكرًا إنك شاركت</div>`:`<div class="row2"><input placeholder="اكتب إجابتك باسم مستعار..." maxlength="500" enterkeyhint="send"><button class="snd" data-d="send">جاوب</button></div>`}
- ${DQ.a.slice(0,6).map(x=>{const n=DQ.l.filter(y=>y.answer_id==x.id),on=DQ.mine.has(x.id);return`<div class="ans">${av(x.alias,"",x.avatar)}<div><small>${esc(x.alias)}</small>${esc(x.body)}</div>${isAdm()?`<button class="lk" data-d="ad" data-id="${x.id}">🗑</button>`:""}<button class="lk em ${on?"on":""}" data-d="lk" data-id="${x.id}" data-on="${on?1:0}">${on?"❤️":"🤍"} ${n.length||""}</button></div>`}).join("")}
+ ${DQ.a.slice(0,3).map(x=>{const n=DQ.l.filter(y=>y.answer_id==x.id),on=DQ.mine.has(x.id);return`<div class="ans">${av(x.alias,"",x.avatar)}<div><small>${esc(x.alias)}</small>${esc(x.body)}</div>${isAdm()?`<button class="lk" data-d="ad" data-id="${x.id}">🗑</button>`:""}<button class="lk em ${on?"on":""}" data-d="lk" data-id="${x.id}" data-on="${on?1:0}">${on?"❤️":"🤍"} ${n.length||""}</button></div>`}).join("")}
  ${DQ.a.length?"":'<div class="m" style="margin-top:8px;position:relative">كن أول واحد يجاوب 🌱</div>'}
  <div class="foot"><button class="ghost em" data-d="sh">📤 شارك السؤال</button></div></div>`;
  const tot=DQ.m.length+0,cnt=k=>DQ.m.filter(x=>x==k).length,pc=k=>tot?Math.round(cnt(k)/tot*100):0;
@@ -462,6 +485,19 @@ async function renderNotif(){const el=$("#notif");if(!sess){el.innerHTML='<div c
  if(r.some(n=>!n.read)){try{await rq("notifications?read=eq.false",{method:"PATCH",body:JSON.stringify({read:true})});pollN()}catch(e){}}}
 $("#bell").onclick=()=>view("notif");$("#notif").onclick=e=>{const b=e.target.closest("[data-au2]");if(b)authOpen(b.dataset.au2)};
 setInterval(pollN,30000);setTimeout(pollN,1500);
+
+// ---- v4.2 calm: photos, greeting, daily line, breathing
+const PX=(id,w)=>`https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}`;
+const lazyBg=(el,id,w)=>{if(!el||el.dataset.l)return;el.dataset.l=1;const go=()=>{const im=new Image();im.onload=()=>{el.style.backgroundImage=`url(${im.src})`;el.classList.add("on")};im.onerror=()=>{};im.src=PX(id,w)};
+ if("IntersectionObserver"in window){const o=new IntersectionObserver(e=>{if(e[0].isIntersecting){o.disconnect();go()}});o.observe(el)}else go()};
+const CALM=["مش لازم تحل كل حاجة النهاردة. كفاية إنك وصلت لهنا.","خد نفس عميق. اللي فات فات، واللي جاي هتقدر عليه.","مشاعرك مش ضعف، دي دليل إنك إنسان.","حتى أصعب يوم له آخر.","مش لازم تكون بخير طول الوقت، وده طبيعي.","الفضفضة أول خطوة للراحة.","إنت مش لوحدك، في ناس كتير بتحس زيك.","خليك لطيف مع نفسك زي ما بتكون مع صاحبك.","خطوة صغيرة النهاردة تكفي.","الهدوء بيبدأ بنفس واحد.","اللي بيتعب بيستاهل يرتاح.","ما تقارنش يومك بأيام الناس.","كلمة طيبة النهاردة ممكن تغيّر يوم حد.","الصبر مش إنك تستنى، الصبر إنك تفضل ماشي.","من حقك تقول: أنا محتاج راحة.","النور بييجي بعد أطول ليل.","اسمح لنفسك تحس، وبعدين اسمح لنفسك تعدّي.","الراحة مش رفاهية، دي حاجة أساسية.","كل يوم جديد فرصة تبدأ بهدوء.","اللي في قلبك يستاهل يتسمع.","اهدا شوية، الدنيا مش هتجري منك."];
+(function(){const h=new Date().getHours(),T=h>=5&&h<12?["صباح الهدوء ☀️",39037835]:h>=12&&h<17?["نهارك هادي 🌿",1423600]:h>=17&&h<20?["مساء السكينة 🌅",35484518]:["ليلة هادية 🌙",41046525];
+ $("#cg").textContent=T[0];$("#cq").textContent=CALM[Math.floor(Date.now()/864e5)%CALM.length];lazyBg($("#calm .cbg"),T[1],900);document.querySelectorAll("[data-ph]").forEach(x=>lazyBg(x,x.dataset.ph,700))})();
+let brT=null;function brClose(){clearInterval(brT);brT=null;$("#br").classList.remove("on");document.body.style.overflow=""}
+$("#brb").onclick=()=>{const ov=$("#br"),r=$("#brr"),t=$("#brt"),sb=$("#brs");ov.classList.add("on");document.body.style.overflow="hidden";lazyBg(ov.querySelector(".cbg"),16640848,900);let n=30,ph=-1;t.textContent="استعد";sb.textContent="30";r.className="brring";
+ const step=()=>{const e=30-n,c=e%10,np=c<4?0:1;if(np!=ph||c==0||c==4){ph=np;r.className="brring "+(np?"out":"in");t.textContent=np?"زفير... ببطء":"شهيق... من مناخيرك"}sb.textContent=n+" ثانية";if(n<=0){clearInterval(brT);brT=null;r.className="brring";t.textContent="برافو 💜";sb.textContent="لو لسه محتاج تفضفض، إحنا هنا";bump();return}n--};
+ clearInterval(brT);setTimeout(()=>{step();brT=setInterval(step,1000)},600)};
+$("#brx").onclick=brClose;document.addEventListener("keydown",e=>{if(e.key=="Escape")brClose()});
 // ---- auth UI
 let authMode="in",pickAv="a0";const AVS=Array.from({length:12},(_,i)=>"a"+i);
 function authUI(){$$("[data-au]").forEach(b=>b.classList.toggle("on",b.dataset.au==authMode));$("#auAv").style.display=authMode=="up"?"block":"none";$("#auGo").textContent=authMode=="up"?"إنشاء الحساب":"دخول";
@@ -528,7 +564,7 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="4.1";
+const VER="4.2";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 document.querySelectorAll(".vstamp").forEach(x=>x.textContent="نسخة "+VER);
 </script></body></html>
