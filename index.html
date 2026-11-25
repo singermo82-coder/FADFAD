@@ -54,7 +54,10 @@ $("#mode").textContent=CLOUD?"متصل — الناس بتشوف اعترافا�
 $("#f").innerHTML=CATS.map(c=>`<button class="${c==cat?"":"g"}" data-c="${c}">${c}</button>`).join("");
 $("#f").onclick=e=>{if(e.target.dataset.c){cat=e.target.dataset.c;[...$("#f").children].forEach(b=>b.className=b.dataset.c==cat?"":"g");render()}};
 let D={p:[],c:[],r:[]};
-async function render(){try{D=await API.load()}catch(e){$("#feed").innerHTML='<div class="card err">مش قادر أتصل بالسيرفر. اتأكد من النت وإعدادات config.js</div>';return}
+const drafts={};
+async function render(){const ae=document.activeElement;if(ae&&ae.matches("#feed input")&&!busy)return render.skip=1;
+ document.querySelectorAll("#feed input[data-in]").forEach(i=>{if(i.value)drafts[i.dataset.in]=i.value;else delete drafts[i.dataset.in]});
+ try{D=await API.load()}catch(e){$("#feed").innerHTML='<div class="card err">مش قادر أتصل بالسيرفر. اتأكد من النت وإعدادات config.js</div>';return}
  const ps=D.p.filter(p=>cat=="الكل"||p.category==cat);
  $("#feed").innerHTML=ps.length?ps.map(p=>{const cs=D.c.filter(c=>c.post_id==p.id);
  return`<div class="card" data-id="${p.id}"><b>${esc(p.alias)}</b> <span class="m">· ${ago(p.created_at)} · بيختفي بعد ${left(p.expires_at)}</span>
@@ -63,14 +66,15 @@ async function render(){try{D=await API.load()}catch(e){$("#feed").innerHTML='<d
  return`<button class="${on?"on":"g"}" data-k="${k}" data-on="${on?1:0}">${KINDS[k]} ${n.length||""}</button>`}).join("")}
  <button class="g" data-a="rep">🚩 بلاغ</button></div>
  <div class="cm">${cs.map(c=>`<div><b>${esc(c.alias)}</b>: ${esc(c.body)}</div>`).join("")}
- <input placeholder="اكتب رد مجهول..." data-in="${p.id}" maxlength="1000"><button data-a="cm">رد</button></div></div>`}).join(""):'<div class="card m">لسه مفيش اعترافات هنا. كن أول واحد.</div>'}
-$("#feed").onclick=async e=>{const c=e.target.closest(".card");if(!c||busy)return;const id=c.dataset.id,t=e.target;busy=1;
+ <input placeholder="اكتب رد مجهول..." data-in="${p.id}" maxlength="1000"><button data-a="cm">رد</button></div></div>`}).join(""):'<div class="card m">لسه مفيش اعترافات هنا. كن أول واحد.</div>';
+ document.querySelectorAll("#feed input[data-in]").forEach(i=>{if(drafts[i.dataset.in])i.value=drafts[i.dataset.in]})}
+$("#feed").onclick=async e=>{const t=e.target.closest("button"),c=t&&t.closest(".card");if(!c||busy)return;const id=c.dataset.id;busy=1;
  try{if(t.dataset.k)await API.react(id,t.dataset.k,t.dataset.on=="1");
- else if(t.dataset.a=="cm"){const i=c.querySelector("input"),v=i.value.trim();if(v){const k="al"+id,m=JSON.parse(sessionStorage.al||"{}");m[id]=m[id]||alias();sessionStorage.al=JSON.stringify(m);await API.comment({post_id:id,body:v,alias:m[id],device_id:dev})}}
+ else if(t.dataset.a=="cm"){const i=c.querySelector("input"),v=i.value.trim();if(v){const k="al"+id,m=JSON.parse(sessionStorage.al||"{}");m[id]=m[id]||alias();sessionStorage.al=JSON.stringify(m);await API.comment({post_id:id,body:v,alias:m[id],device_id:dev});delete drafts[id]}}
  else if(t.dataset.a=="rep"&&confirm("تبلّغ عن الاعتراف ده؟")){await API.report(id)}}catch(x){alert("حصلت مشكلة، جرب تاني")}
  busy=0;render()};
 $("#send").onclick=async()=>{const v=$("#t").value.trim();$("#e").textContent="";if(!v)return;
  try{await API.post({body:v,category:$("#cat").value,intent:$("#int").value,alias:alias(),device_id:dev});$("#t").value="";render()}catch(x){$("#e").textContent="مقدرتش أنشر، جرب تاني"}};
-render();setInterval(()=>{if(!busy&&!document.activeElement.matches("input,textarea"))render()},20000);
+render();setInterval(()=>{if(!busy&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)"))render()},20000);
 if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
 </script></body></html>
