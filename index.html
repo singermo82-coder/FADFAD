@@ -389,6 +389,10 @@ html.dk #swlink{bottom:16px}
 #jr .jl{margin:8px 0;padding-inline-start:12px;border-inline-start:2px solid #ffd27a66;font-size:14px;line-height:1.8}#jr .jl small{display:block}
 .jx{display:block;margin-top:6px;background:none;color:var(--mut);font-size:11.5px;text-decoration:underline}
 .tp{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}.tp button{background:#8b7cf61f;border:1px solid #8b7cf655;color:var(--tx);border-radius:999px;padding:8px 14px;font-weight:600;font-size:14px}.tp button.on{background:linear-gradient(135deg,#ffd27a,#f2b45a);color:#3a2a08;border-color:transparent}#jtx{width:100%;background:#0f0c20;border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:var(--tx);outline:none;margin:4px 0 8px}
+
+#pushbox .pc,#pushbn .pc{background:linear-gradient(160deg,#2a2452,#211c42);border:1px solid #ffd27a33;border-radius:18px;padding:13px 15px;margin:10px 0}
+#pushbox h4,#pushbn h4{margin:0 0 4px;font-size:15px}#pushbox p,#pushbn p{margin:0 0 8px;color:var(--mut);font-size:12.5px;line-height:1.8}
+.pb{display:flex;gap:8px;flex-wrap:wrap}.pb button{padding:9px 14px;border-radius:14px;font-weight:700;background:#ffffff14;color:var(--tx)}.pb button.pr{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff}
 </style></head><body>
 <div id="splash" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><radialGradient id="sl1" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe6ff"/><stop offset=".5" stop-color="#b79cff"/><stop offset="1" stop-color="#5a3fb0"/></radialGradient><radialGradient id="sl2" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#fff6cf"/><stop offset=".55" stop-color="#ffd27a"/><stop offset="1" stop-color="#f2994a"/></radialGradient><radialGradient id="sl3"><stop offset="0" stop-color="#ffd27a" stop-opacity=".5"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient></defs><circle cx="66" cy="76" r="52" fill="url(#sl3)"/><circle class="sp1" cx="42" cy="76" r="27" fill="url(#sl1)"/><circle class="sp2" cx="84" cy="80" r="21.5" fill="url(#sl2)"/><circle class="pt" cx="36" cy="46" r="3" fill="#e6d9ff"/><circle class="pt" cx="44" cy="40" r="2.4" fill="#e6d9ff"/><circle class="pt" cx="30" cy="42" r="2" fill="#e6d9ff"/><circle class="pt" cx="40" cy="50" r="2.6" fill="#e6d9ff"/><circle cx="100" cy="15" r="9" fill="#ffe9a8"/></svg><div class="sn">ونس</div><div class="se">WANAS</div><div class="sg">فضفضة مجهولة، بهدوء وأمان</div></div><script>try{var sp=document.getElementById("splash");if(sessionStorage.wsp)sp.remove();else{sessionStorage.wsp=1;setTimeout(function(){sp.remove()},2800)}}catch(e){}</script>
 <div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="ونس">
@@ -670,7 +674,7 @@ $("#feed").onclick=async e=>{const t=e.target.closest("button"),c=t&&t.closest("
  busy=0;render()};
 $("#feed").addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.matches("input[data-in]")){e.preventDefault();e.target.closest(".card").querySelector('[data-a="cm"]').click()}});
 $("#send").onclick=async()=>{const v=$("#t").value.trim();$("#e").textContent="";if(!v)return;$("#send").disabled=true;
- try{if(need()){$("#send").disabled=false;return}const q=prof&&!anonOn()?{alias:prof.username,avatar:prof.avatar}:{alias:alias(),avatar:null};const hv=heavy(v);await API.post({body:v,category:$("#cat").value,intent:$("#int").value,alias:q.alias,avatar:q.avatar,device_id:dev});$("#t").value="";bump();sheet(0);view("home");cat="الكل";chips();await render();if(hv){toast("اتنشر. صوتك وصل 💜");setTimeout(()=>safety(1),900)}else{burst(innerWidth/2,innerHeight*.7,["🎉","✨","💜","🌙","⭐","💗"],18);toast("اتنشر! صوتك وصل 💜");window.jrOffer&&setTimeout(()=>jrOffer(v),1600)}}catch(x){$("#e").textContent="مقدرتش أنشر، جرب تاني"}$("#send").disabled=false};
+ try{if(need()){$("#send").disabled=false;return}const q=prof&&!anonOn()?{alias:prof.username,avatar:prof.avatar}:{alias:alias(),avatar:null};const hv=heavy(v);await API.post({body:v,category:$("#cat").value,intent:$("#int").value,alias:q.alias,avatar:q.avatar,device_id:dev});$("#t").value="";bump();sheet(0);view("home");cat="الكل";chips();await render();if(hv){toast("اتنشر. صوتك وصل 💜");setTimeout(()=>safety(1),900)}else{burst(innerWidth/2,innerHeight*.7,["🎉","✨","💜","🌙","⭐","💗"],18);toast("اتنشر! صوتك وصل 💜");window.jrOffer&&setTimeout(()=>jrOffer(v),1600)}localStorage.posted="1";window.pushPaint&&setTimeout(pushPaint,2500)}catch(x){$("#e").textContent="مقدرتش أنشر، جرب تاني"}$("#send").disabled=false};
 let dp;addEventListener("beforeinstallprompt",e=>{e.preventDefault();dp=e;$("#inst").style.display="block"});
 $("#inst").onclick=async()=>{if(dp){dp.prompt();await dp.userChoice;dp=null;$("#inst").style.display="none"}};
 
@@ -813,7 +817,7 @@ function renderAcct(){const el=$("#acct");if(!CLOUD){el.innerHTML='<div class="c
  if(!prof){el.innerHTML='<div class="card"><h3>👋 أهلًا بيك</h3><p>اعمل حساب باسم مستعار وصورة، من غير إيميل ولا رقم تليفون، وشارك وردّ وكمّل سلسلة أيامك.</p><button class="full" data-au2="up">حساب جديد</button><button class="full sec" data-au2="in">عندي حساب</button></div>';return}
  const s=stk();el.innerHTML=`<div class="card"><div class="me">${av("","",prof.avatar)}<div><b>${esc(prof.username)}</b>${isAdm()?'<span class="badge">👑 أدمن</span>':""}${prof.banned?'<span class="badge">موقوف</span>':""}<div class="m">🔥 أطول سلسلة: ${s.best||0} يوم</div></div></div>
  <label class="anon"><input type="checkbox" id="anon2" ${anonOn()?"checked":""}> انشر دايمًا باسم عشوائي مجهول</label>
- <button class="full sec" data-pf="1">✏️ تعديل الاسم والصورة</button><div class="m" id="rcSt" style="margin:10px 0 4px;text-align:center">🔑 بنشوف كود الاستعادة...</div><button class="full sec" data-rc="1">🔑 كود الاستعادة</button>${isAdm()?'<button class="full" data-v="adminv">🛠 لوحة الإدارة</button>':""}<button class="full sec" data-v="about">عن ونس وقواعد المجتمع</button><button class="full sec" data-lo="1">تسجيل خروج</button><div class="m" style="text-align:center;margin-top:8px">نسخة ${VER}</div></div>`;rcStatus()}
+ <button class="full sec" data-pf="1">✏️ تعديل الاسم والصورة</button><div class="m" id="rcSt" style="margin:10px 0 4px;text-align:center">🔑 بنشوف كود الاستعادة...</div><button class="full sec" data-rc="1">🔑 كود الاستعادة</button>${isAdm()?'<button class="full" data-v="adminv">🛠 لوحة الإدارة</button>':""}<div id="pushbox"></div><button class="full sec" data-v="about">عن ونس وقواعد المجتمع</button><button class="full sec" data-lo="1">تسجيل خروج</button><div class="m" style="text-align:center;margin-top:8px">نسخة ${VER}</div></div>`;rcStatus();window.pushPaint&&pushPaint()}
 $("#acct").onclick=e=>{const b=e.target.closest("button");if(!b)return;if(b.dataset.au2)authOpen(b.dataset.au2);if(b.dataset.lo&&confirm("تسجّل خروج؟"))logout()};
 $("#acct").onchange=e=>{if(e.target.id=="anon2"){localStorage.anon=e.target.checked?"1":"0";who()}};
 
@@ -863,7 +867,7 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="5.2.1";
+const VER="5.3";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 
 function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
@@ -983,5 +987,30 @@ $("#jtp").onclick=e=>{const b=e.target.closest("button");if(!b)return;pick=b.dat
 $("#jtx").oninput=()=>{if($("#jtx").value){pick="";document.querySelectorAll("#jtp button").forEach(x=>x.classList.remove("on"))}};
 $("#jstno").onclick=()=>ST.classList.remove("on");ST.addEventListener("click",e=>{if(e.target===ST)ST.classList.remove("on")});
 $("#jstgo").onclick=()=>{const t=($("#jtx").value.trim()||pick).slice(0,70);if(!t){toast("اختار موضوع أو اكتب موضوعك");return}S({start:Date.now(),topic:t,e:{}});ST.classList.remove("on");paint();toast("بدأت رحلتك 🌙");setTimeout(()=>box.scrollIntoView({behavior:"smooth",block:"center"}),300)};
+paint();})();
+
+/* push notifications (opt-in). Hidden unless the backend part is set up. */
+(function(){let KEYP=null,ready=null;
+const sup=()=>"serviceWorker"in navigator&&"PushManager"in window&&"Notification"in window,
+ios=()=>/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform=="MacIntel"&&navigator.maxTouchPoints>1),
+std=()=>matchMedia("(display-mode: standalone)").matches||navigator.standalone===true,
+u8=b=>{const p="=".repeat((4-b.length%4)%4),r=atob((b+p).replace(/-/g,"+").replace(/_/g,"/"));return Uint8Array.from([...r].map(c=>c.charCodeAt(0)))};
+async function key(){if(!CLOUD)return null;if(ready)return KEYP;ready=(async()=>{try{const r=await rq("push_pub?select=public_key&id=eq.1");KEYP=r&&r[0]&&r[0].public_key||null}catch(e){KEYP=null}return KEYP})();return ready}
+async function cur(){try{const reg=await navigator.serviceWorker.ready;return await reg.pushManager.getSubscription()}catch(e){return null}}
+const box=document.createElement("div");box.id="pushbn";const jr=$("#jr");jr.parentNode.insertBefore(box,jr);
+async function paint(){const hold=$("#pushbox");const k=await key();let a="",b="";
+if(!k||!sess||!prof||!sup()&&!ios()){if(hold)hold.innerHTML="";box.innerHTML="";return}
+if(ios()&&!std()){a=`<div class="pc"><h4>🔔 إشعارات الردود</h4><p>على الآيفون الإشعارات بتشتغل بس لو ونس متضاف للشاشة الرئيسية (iOS 16.4 أو أحدث): من زرار المشاركة في Safari اختار «إضافة إلى الشاشة الرئيسية»، وافتحه من هناك.</p></div>`}
+else if(!sup()){a=""}
+else{const sub=await cur(),on=sub&&Notification.permission=="granted",den=Notification.permission=="denied";
+a=`<div class="pc"><h4>🔔 إشعارات الردود</h4><p>${on?"شغّالة. هيجيلك إشعار بدون أي تفاصيل لما حد يرد أو يبعتلك دعم. تقدر توقفها في أي وقت.":den?"الإشعارات مقفولة من إعدادات المتصفح. فعّلها من هناك لو حبيت.":"تحب نبلغك لما حد يرد على اعترافك أو يبعتلك دعم؟ الإشعار هيقول بس «فيه رد جديد» من غير أي كلام من الرد."}</p><div class="pb">${on?'<button data-pu="off">إيقاف</button>':den?"":'<button class="pr" data-pu="on">فعّل الإشعارات</button>'}</div></div>`;
+if(!on&&!den&&localStorage.posted&&!localStorage.pushno)b=`<div class="pc"><h4>🔔 تحب نبلغك لما حد يرد؟</h4><p>اختياري تمامًا، والإشعار مفيهوش أي تفاصيل.</p><div class="pb"><button class="pr" data-pu="on">آه، فعّل</button><button data-pu="no">مش دلوقتي</button></div></div>`}
+if(hold)hold.innerHTML=a;box.innerHTML=b}
+window.pushPaint=paint;
+async function on(){if(need())return;try{const p=await Notification.requestPermission();if(p!="granted"){toast("تمام، ممكن تفعّلها بعدين من حسابي");paint();return}
+const reg=await navigator.serviceWorker.ready;const sub=await reg.pushManager.getSubscription()||await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:u8(KEYP)});const j=sub.toJSON();
+await rq("push_subs?on_conflict=endpoint",{method:"POST",headers:{Prefer:"resolution=merge-duplicates"},body:JSON.stringify({endpoint:j.endpoint,p256dh:j.keys.p256dh,auth:j.keys.auth,user_id:sess.uid})});toast("الإشعارات اشتغلت 🔔")}catch(e){toast("معرفتش أفعّل الإشعارات دلوقتي")}paint()}
+async function off(){try{const sub=await cur();if(sub){const ep=sub.endpoint;await sub.unsubscribe();await rq("push_subs?endpoint=eq."+encodeURIComponent(ep),{method:"DELETE"}).catch(()=>{})}toast("اتوقفت")}catch(e){toast("حصلت مشكلة")}paint()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-pu]");if(!b)return;const a=b.dataset.pu;if(a=="on")on();else if(a=="off")off();else{localStorage.pushno="1";paint()}});
 paint();})();
 </script></body></html>
