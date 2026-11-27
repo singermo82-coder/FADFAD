@@ -361,6 +361,33 @@ html.ph .logo .en{font-size:9.5px;letter-spacing:4.5px;padding-inline-start:4.5p
 .lnk{background:none;color:var(--p);font-size:13px;padding:8px 10px;text-decoration:underline}
 .wt{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;padding-top:10px;border-top:1px solid #ffffff22}.wtl{font-size:13.5px;font-weight:700;opacity:.95;margin-inline-end:2px}.wtc{background:#ffffff1c;border:1px solid #ffffff44;color:#fff;border-radius:999px;padding:6px 14px;font-weight:700;font-size:13.5px;text-shadow:none;cursor:pointer}.wtc:active{transform:scale(.95)}.wtc.on{background:#fff;color:#3a2a8a;border-color:#fff}.wtn{font-size:12.5px;opacity:.85;margin-top:2px}
 html.mobile .wt{margin-top:4px;padding-top:6px;gap:6px}html.mobile .wtl{width:100%;font-size:12.5px}html.mobile .wtc{padding:5px 12px;font-size:12.5px}html.mobile .calm,html.mobile .calm[data-mood]{min-height:150px}html.mobile .calm .cq{display:block;font-size:13px;line-height:1.6}
+
+/* safety wall */
+#swov{z-index:70}#swov .sheet{border-top:3px solid #ffd27a55}
+.sw-h{display:flex;gap:10px;align-items:center}.sw-h i{font-style:normal;font-size:30px}
+#swov h2{margin:0;font-size:22px}.sw-m{color:var(--tx);line-height:1.9;font-size:15.5px;margin:10px 0 12px}
+.sw-l{display:grid;gap:8px}.sw-r{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:11px 14px}
+.sw-r b{display:block;font-size:14.5px}.sw-r small{color:var(--mut);font-size:12px}
+.sw-r a{flex:none;direction:ltr;background:linear-gradient(135deg,#ffd27a,#f2b45a);color:#3a2a08;font-weight:800;padding:8px 14px;border-radius:999px;text-decoration:none;font-size:15px}
+.sw-r.em a{background:#ffffff14;color:var(--tx);border:1px solid #ffd27a77}
+.sw-n{color:var(--mut);font-size:12px;line-height:1.8;margin:12px 2px 8px;text-align:center}
+#swov .ok{width:100%;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;padding:13px;border-radius:16px;font-weight:800;font-size:16px}
+#swlink{position:fixed;z-index:29;right:12px;bottom:calc(var(--bar) + 12px + env(safe-area-inset-bottom));background:#211c42e6;color:#ffd98a;border:1px solid #ffd27a44;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+html.dk #swlink{bottom:16px}
+.swin{display:block;margin:8px auto 0;color:#ffd98a;font-size:12px;text-decoration:underline;text-underline-offset:3px;background:none}
+
+/* curated replies + journey */
+.sr{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 2px}.sr button{white-space:nowrap;background:#8b7cf61f;border:1px solid #8b7cf655;color:var(--tx);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600}
+.sr button.on{background:linear-gradient(135deg,#ffd27a,#f2b45a);color:#3a2a08;border-color:transparent}.sr b{font-weight:800;margin-inline-start:4px}
+.sr small{width:100%;color:var(--mut);font-size:11.5px}
+#jr .jc{background:linear-gradient(160deg,#2a2452,#211c42);border:1px solid #ffd27a33;border-radius:20px;padding:14px 16px;margin:12px 0}
+#jr h3{margin:0 0 2px;font-size:16px}#jr small{color:var(--mut);font-size:12px}
+.jd{display:flex;gap:6px;margin:10px 0}.jd i{flex:1;height:8px;border-radius:9px;background:#ffffff1c}.jd i.w{background:#ffd27a}.jd i.n{outline:2px solid #ffd27a88;outline-offset:1px}
+#jr input{width:100%;background:#0f0c20;border:1px solid var(--line);border-radius:14px;padding:11px 13px;color:var(--tx);outline:none;margin:6px 0}
+#jr .jb{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}#jr .jb button{padding:9px 14px;border-radius:14px;font-weight:700;background:#ffffff14;color:var(--tx)}
+#jr .jb button.pr{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff}
+#jr .jl{margin:8px 0;padding-inline-start:12px;border-inline-start:2px solid #ffd27a66;font-size:14px;line-height:1.8}#jr .jl small{display:block}
+.jx{display:block;margin-top:6px;background:none;color:var(--mut);font-size:11.5px;text-decoration:underline}
 </style></head><body>
 <div id="splash" aria-hidden="true"><svg viewBox="0 0 120 120"><defs><radialGradient id="sl1" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#efe6ff"/><stop offset=".5" stop-color="#b79cff"/><stop offset="1" stop-color="#5a3fb0"/></radialGradient><radialGradient id="sl2" cx="40%" cy="35%" r="70%"><stop offset="0" stop-color="#fff6cf"/><stop offset=".55" stop-color="#ffd27a"/><stop offset="1" stop-color="#f2994a"/></radialGradient><radialGradient id="sl3"><stop offset="0" stop-color="#ffd27a" stop-opacity=".5"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient></defs><circle cx="66" cy="76" r="52" fill="url(#sl3)"/><circle class="sp1" cx="42" cy="76" r="27" fill="url(#sl1)"/><circle class="sp2" cx="84" cy="80" r="21.5" fill="url(#sl2)"/><circle class="pt" cx="36" cy="46" r="3" fill="#e6d9ff"/><circle class="pt" cx="44" cy="40" r="2.4" fill="#e6d9ff"/><circle class="pt" cx="30" cy="42" r="2" fill="#e6d9ff"/><circle class="pt" cx="40" cy="50" r="2.6" fill="#e6d9ff"/><circle cx="100" cy="15" r="9" fill="#ffe9a8"/></svg><div class="sn">ونس</div><div class="se">WANAS</div><div class="sg">فضفضة مجهولة، بهدوء وأمان</div></div><script>try{var sp=document.getElementById("splash");if(sessionStorage.wsp)sp.remove();else{sessionStorage.wsp=1;setTimeout(function(){sp.remove()},2800)}}catch(e){}</script>
 <div id="stars"></div><header><div class="hd"><a class="logo" href="./" aria-label="ونس">
@@ -427,6 +454,24 @@ html.mobile .wt{margin-top:4px;padding-top:6px;gap:6px}html.mobile .wtl{width:10
 <div class="hint" style="text-align:start">تقدر تغيّر الاسم مرة كل 7 أيام. بعد التغيير هتدخل بالاسم الجديد، ومنشوراتك وردودك القديمة اللي باسمك بتتحدّث بيه.</div>
 <button class="go" id="pfGo">حفظ</button><div id="pfE" class="err hint"></div></div></div>
 <div class="toast" id="toast"></div>
+<div class="ov" id="jov"><div class="sheet"><div class="grab"></div><h2>تحب تتابع نفسك 7 أيام؟</h2>
+<p class="sw-m">سطر واحد خاص بيك كل يوم عن الموضوع ده، ومحدش غيرك يشوفه. بالراحة وبدون أي التزام، وتقدر توقف في أي وقت.</p>
+<button class="go" id="jgo">ابدأ رحلتي</button><button class="go" id="jno" style="background:#ffffff14;box-shadow:none;margin-top:8px">لا، شكرًا</button></div></div>
+
+<div class="ov" id="swov" role="dialog" aria-modal="true" aria-labelledby="swt"><div class="sheet"><div class="grab"></div>
+<div class="sw-h"><i>🕯</i><h2 id="swt">إحنا معاك</h2></div>
+<p class="sw-m" id="swm"></p>
+<div class="sw-l">
+<div class="sw-r"><div><b>الخط الساخن للصحة النفسية</b><small>الأمانة العامة للصحة النفسية، 24 ساعة</small></div><a href="tel:08008880700">0800 888 0700</a></div>
+<div class="sw-r"><div><b>الخط الساخن 16328</b><small>الأمانة العامة للصحة النفسية وعلاج الإدمان</small></div><a href="tel:16328">16328</a></div>
+<div class="sw-r em"><div><b>لو في خطر دلوقتي</b><small>إسعاف 123 · نجدة 122</small></div><a href="tel:123">123</a></div>
+<div class="sw-r"><div><b>نجدة الطفل</b><small>المجلس القومي للطفولة والأمومة، 24 ساعة</small></div><a href="tel:16000">16000</a></div>
+<div class="sw-r"><div><b>العنف ضد المرأة</b><small>مكتب شكاوى المجلس القومي للمرأة، 9ص–9م</small></div><a href="tel:15115">15115</a></div>
+</div>
+<p class="sw-n">ده تنبيه أوتوماتيك من التطبيق بيظهر ليك إنت بس على جهازك، ومش بديل عن مساعدة متخصصة. اتأكد من الأرقام قبل الاتصال، ولو إنت في خطر حاليًا كلم الطوارئ.</p>
+<button class="ok" id="swok">تمام، شكرًا</button></div></div>
+<button id="swlink" aria-label="محتاج مساعدة؟">🕯 محتاج مساعدة؟</button>
+
 <script src="config.js"></script>
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],CFG=window.FADFAD||{},CLOUD=!!(CFG.SUPABASE_URL&&CFG.SUPABASE_KEY);
@@ -504,6 +549,7 @@ const SB=CFG.SUPABASE_URL,KEY=CFG.SUPABASE_KEY,PC="id,body,category,intent,alias
 const saveSess=j=>{sess={at:j.access_token,rt:j.refresh_token,exp:Math.floor(Date.now()/1e3)+(j.expires_in||3600),uid:(j.user&&j.user.id)||(sess&&sess.uid)};localStorage.sess=JSON.stringify(sess);dev=sess.uid};
 function logout(){sess=null;prof=null;localStorage.removeItem("sess");localStorage.removeItem("prof");dev=dev0;afterAuth()}
 async function tok(){if(!sess)return KEY;if(sess.exp-60<Date.now()/1e3){try{const r=await fetch(SB+"/auth/v1/token?grant_type=refresh_token",{method:"POST",headers:{apikey:KEY,"Content-Type":"application/json"},body:JSON.stringify({refresh_token:sess.rt})});if(!r.ok)throw 0;saveSess(await r.json())}catch(e){logout();return KEY}}return sess.at}
+const SRP=["أنا معاك","مريت بنفس الحاجة","مش لوحدك","كلامك وصل","بالراحة عليك","فخور بيك إنك قلتها"],SRL=()=>{try{return JSON.parse(localStorage.srl||"[]")}catch(e){return[]}};
 const rq=async(p,o={})=>{const t=await tok(),{headers:h2,...rest}=o;const r=await fetch(SB+"/rest/v1/"+p,{headers:{apikey:KEY,Authorization:"Bearer "+t,"Content-Type":"application/json",...(h2||{})},...rest});if(!r.ok)throw new Error(await r.text());return r.status==204?null:r.text().then(t=>t?JSON.parse(t):null)};
 const rpc=(n,b)=>rq("rpc/"+n,{method:"POST",body:JSON.stringify(b||{})});
 const mail=u=>"u"+[...new TextEncoder().encode(u.trim().toLowerCase())].map(b=>b.toString(16).padStart(2,"0")).join("")+"@fadfad.app";
@@ -596,11 +642,12 @@ async function render(){const ae=document.activeElement;if(ae&&ae.matches("#feed
  try{D=await API.load()}catch(e){$("#feed").innerHTML='<div class="card err">مش قادر أتصل بالسيرفر. اتأكد من النت وجرب تاني.</div>';return}
  const ps=D.p.filter(p=>cat=="الكل"||p.category==cat);
  const sg=JSON.stringify([D.p,D.c,D.r,D.h,[...D.mine],[...(D.hm||[])],SP,cat,open,isAdm(),prof&&prof.username,prof&&prof.avatar,!!sess,CL.length]);if(sg===fsig&&$("#feed").innerHTML){renderDaily();return}fsig=sg;
- $("#feed").innerHTML=ps.length?ps.map((p,i)=>{const cs=D.c.filter(c=>c.post_id==p.id),sh=open[p.id]?cs:cs.slice(-2);
+ $("#feed").innerHTML=ps.length?ps.map((p,i)=>{const cs=D.c.filter(c=>c.post_id==p.id&&!SRP.includes(String(c.body).trim())),srr=D.c.filter(c=>c.post_id==p.id&&SRP.includes(String(c.body).trim())),sh=open[p.id]?cs:cs.slice(-2);
  return`<article class="card" style="--cc:${CCOL(p.category)||"#8b7cf6"};animation-delay:${Math.min(i,6)*50}ms" data-id="${p.id}"><div class="ph">${av(p.alias,"",p.avatar)}<div><b>${esc(p.alias)}</b>${vb(p.alias)}${isAdm()?`<span class="adm"><button data-a="aed">✏️</button><button data-a="adel">🗑</button><button data-a="aban">🚫</button></span>`:""}<span class="m">${ago(p.created_at)}${isFinite(new Date(p.expires_at))?" · يختفي بعد "+left(p.expires_at):""}</span></div>
  <div class="tg"><span class="b">${esc(p.category)}</span><span class="b ${p.intent=="advice"?"adv":"vnt"}">${p.intent=="advice"?"عايز نصيحة":"عايز يفضفض بس"}</span></div></div>
  <p class="body">${esc(p.body)}</p><div class="rx">${Object.keys(KINDS).map(k=>{const n=D.r.filter(r=>r.post_id==p.id&&r.kind==k),on=D.mine.has(p.id+"|"+k);
  return`<button class="pill em ${on?"on":""}" data-k="${k}" data-on="${on?1:0}">${KINDS[k]}${n.length?" · "+n.length:""}</button>`}).join("")}<button class="pill rp" data-a="rep">🚩 بلاغ</button></div>
+ <div class="sr">${SRP.map((m,i)=>{const n=srr.filter(c=>String(c.body).trim()==m).length,on=SRL().includes(p.id+"|"+i);return`<button class="${on?"on":""}" data-pr="${i}">${m}${n?`<b>${n}</b>`:""}</button>`}).join("")}</div>
  <div class="cm">${!open[p.id]&&cs.length>2?`<button class="more" data-a="tg">عرض كل ${cs.length} ردود</button>`:""}
  ${sh.map(c=>`<div class="c">${av(c.alias,"",c.avatar)}<div><small>${esc(c.alias)}${vb(c.alias)}</small>${esc(c.body)}${hpBtn(c)}</div>${isAdm()?`<span class="adm" data-cid="${c.id}"><button class="ax" data-a="ced">✏️</button><button class="ax" data-a="cdel">🗑</button><button class="ax" data-a="cban">🚫</button></span>`:""}</div>`).join("")}
  <div class="ci"><input placeholder="اكتب رد..." data-in="${p.id}" maxlength="1000" enterkeyhint="send"><button data-a="cm">رد</button></div></div></article>`}).join(""):
@@ -613,6 +660,7 @@ $("#feed").onclick=async e=>{const t=e.target.closest("button"),c=t&&t.closest("
  try{if(["aed","adel","aban","ced","cdel","cban"].includes(t.dataset.a)){await adminFeed(t,id)}
  else if(t.dataset.a!="tg"&&need()){busy=0;return}
  else if(t.dataset.k){if(t.dataset.on!="1"){const r=t.getBoundingClientRect();burst(r.left+r.width/2,r.top,{same:["🤝","✨"],hug:["🤗","💜","💗"],tip:["💡","✨"],feel:["🤍","💗","✨"]}[t.dataset.k],7)}await API.react(id,t.dataset.k,t.dataset.on=="1")}
+ else if(t.dataset.pr!==undefined){const i=+t.dataset.pr,k=id+"|"+i;if(SRL().includes(k)){toast("ردك وصل قبل كده 💜")}else{const q=ident(id);await API.comment({post_id:id,body:SRP[i],alias:q.alias,avatar:q.avatar,device_id:dev});const l=SRL();l.push(k);localStorage.srl=JSON.stringify(l);bump();toast("وصّلنا ردك 💜")}}
  else if(t.dataset.a=="hp"){await API.helpful(t.dataset.cid,t.dataset.on=="1")}
  else if(t.dataset.a=="tg")open[id]=1;
  else if(t.dataset.a=="cm"){const i=c.querySelector("input"),v=i.value.trim();if(v){const q=ident(id);await API.comment({post_id:id,body:v,alias:q.alias,avatar:q.avatar,device_id:dev});delete drafts[id];bump()}}
@@ -620,7 +668,7 @@ $("#feed").onclick=async e=>{const t=e.target.closest("button"),c=t&&t.closest("
  busy=0;render()};
 $("#feed").addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.matches("input[data-in]")){e.preventDefault();e.target.closest(".card").querySelector('[data-a="cm"]').click()}});
 $("#send").onclick=async()=>{const v=$("#t").value.trim();$("#e").textContent="";if(!v)return;$("#send").disabled=true;
- try{if(need()){$("#send").disabled=false;return}const q=prof&&!anonOn()?{alias:prof.username,avatar:prof.avatar}:{alias:alias(),avatar:null};await API.post({body:v,category:$("#cat").value,intent:$("#int").value,alias:q.alias,avatar:q.avatar,device_id:dev});$("#t").value="";bump();sheet(0);view("home");cat="الكل";chips();await render();burst(innerWidth/2,innerHeight*.7,["🎉","✨","💜","🌙","⭐","💗"],18);toast("اتنشر! صوتك وصل 💜")}catch(x){$("#e").textContent="مقدرتش أنشر، جرب تاني"}$("#send").disabled=false};
+ try{if(need()){$("#send").disabled=false;return}const q=prof&&!anonOn()?{alias:prof.username,avatar:prof.avatar}:{alias:alias(),avatar:null};const hv=heavy(v);await API.post({body:v,category:$("#cat").value,intent:$("#int").value,alias:q.alias,avatar:q.avatar,device_id:dev});$("#t").value="";bump();sheet(0);view("home");cat="الكل";chips();await render();if(hv){toast("اتنشر. صوتك وصل 💜");setTimeout(()=>safety(1),900)}else{burst(innerWidth/2,innerHeight*.7,["🎉","✨","💜","🌙","⭐","💗"],18);toast("اتنشر! صوتك وصل 💜");window.jrOffer&&setTimeout(()=>jrOffer(v),1600)}}catch(x){$("#e").textContent="مقدرتش أنشر، جرب تاني"}$("#send").disabled=false};
 let dp;addEventListener("beforeinstallprompt",e=>{e.preventDefault();dp=e;$("#inst").style.display="block"});
 $("#inst").onclick=async()=>{if(dp){dp.prompt();await dp.userChoice;dp=null;$("#inst").style.display="none"}};
 
@@ -813,7 +861,7 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="5.0";
+const VER="5.2";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 
 function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
@@ -897,4 +945,34 @@ Q("#rstok").onclick=()=>{Q("#rest").classList.remove("on");acc=0;extra=0;toast("
 Q("#rstmore").onclick=()=>{Q("#rest").classList.remove("on");extra=acc};
 Q("#rstlv").onclick=()=>{Q("#rest").classList.remove("on");acc=0;extra=0;lvOpen()};
 })();
+
+/* safety wall */
+(function(){const N=t=>String(t).replace(/[\u064B-\u065F\u0670\u0640]/g,"").replace(/[أإآٱ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/(.)\1{2,}/g,"$1").replace(/\s+/g," ").toLowerCase();
+const K=["انتحر","اموت نفسي","نفسي اموت","عايز اموت","عاوز اموت","عايزه اموت","عاوزه اموت","ااذي نفسي","اذي نفسي","اجرح نفسي","جرحت نفسي","اقتل نفسي","انهي حياتي","اخلص من حياتي","اخلص نفسي","مش عايز اعيش","مش عاوز اعيش","مش عايزه اعيش","مش عاوزه اعيش","مش عايز اكمل","مش عاوز اكمل","مش قادر اكمل","مش قادره اكمل","تعبت من الحياه","زهقت من الحياه","زهقت من حياتي","كرهت حياتي","كاره حياتي","كارهه حياتي","الموت احسن","الموت ارحم","ياريتني مت","يارتني مت","ياريتني ما اتولدت","محدش هيفتقدني","مفيش امل","ماليش امل","فقدت الامل","يئست","استسلمت","ماليش لزمه","ماليش قيمه","انا عبء","محدش بيحبني","محدش حاسس بيا","محدش بيسمعني","مفيش حد جنبي","محدش جنبي","مفيش حد يسمعني","وحيد جدا","وحيده جدا","لوحدي جدا","لوحدي خالص","حاسس اني وحيد","حاسه اني وحيده","بيضربني","بتضربني","بيضربنا","ضربني","ضربتني","بيتحرش","تحرش بيا","تحرش بي","اغتصب","بيعتدي","اعتدي عليا","بيعذبني","بتعذبني","بيهينني","بيهددني","بيبتزني","ابتزني","خايف علي حياتي","خايفه علي حياتي","suicide","kill myself"].map(N);
+window.heavy=t=>{const n=N(t);return K.some(k=>n.includes(k))};
+const W=$("#swov");
+window.safety=(auto)=>{$("#swm").textContent=auto?"كلامك وصل، وشكرًا إنك قدرت تقوله. اللي بتحس بيه تقيل، ومش لازم تشيله لوحدك. مفيش حاجة غلط فيك إنك تتعب. لو حابب تكلم حد بشري دلوقتي، الأرقام دي قدامك، وسرية.":"ولا يهمك، ساعات بنحتاج حد يسمعنا. لو حابب تكلم حد بشري، الأرقام دي ليك في أي وقت.";W.classList.add("on")};
+$("#swok").onclick=()=>W.classList.remove("on");W.addEventListener("click",e=>{if(e.target===W)W.classList.remove("on")});
+$("#swlink").onclick=()=>safety(0);
+const hn=document.querySelector("#ov .hint");if(hn){const b=document.createElement("button");b.className="swin";b.type="button";b.textContent="محتاج مساعدة؟";b.onclick=()=>safety(0);hn.after(b)}
+})();
+
+/* seven-day journey */
+(function(){const K=()=>"jr_"+(typeof sess!=="undefined"&&sess?sess.uid:"d"),G=()=>{try{return JSON.parse(localStorage[K()]||"null")}catch(e){return null}},S=j=>j?localStorage[K()]=JSON.stringify(j):localStorage.removeItem(K());
+const d0=t=>{const d=new Date(t);return new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()},esc2=t=>String(t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const box=document.createElement("div");box.id="jr";const fd=$("#feed");fd.parentNode.insertBefore(box,fd);
+let pend="";const J=$("#jov");
+window.jrOffer=v=>{if(G())return;pend=v;J.classList.add("on")};
+$("#jno").onclick=()=>J.classList.remove("on");
+$("#jgo").onclick=()=>{S({start:Date.now(),topic:pend.slice(0,70),e:{}});J.classList.remove("on");paint();toast("بدأت رحلتك 🌙");box.scrollIntoView({behavior:"smooth",block:"center"})};
+function paint(){const j=G();if(!j){box.innerHTML="";return}const n=Math.round((d0(Date.now())-d0(j.start))/864e5),done=n>=7;
+const dots='<div class="jd">'+[0,1,2,3,4,5,6].map(i=>`<i class="${j.e[i]?"w":""} ${i==n&&!done?"n":""}"></i>`).join("")+"</div>";
+if(!done){const t=j.e[n];box.innerHTML=`<div class="jc"><h3>🌙 رحلتك، اليوم ${n+1} من 7</h3><small>عن: «${esc2(j.topic)}...» · خاصة بيك إنت بس</small>${dots}`+(t?`<div class="jl"><small>سطر النهاردة</small>${esc2(t)}</div><div class="jb"><button data-j="edit">عدّل</button></div>`:`<input id="jin" maxlength="200" placeholder="حاسس بإيه النهاردة بخصوص الموضوع ده؟"><div class="jb"><button class="pr" data-j="save">احفظ</button><button data-j="skip">مش النهاردة</button></div>`)+`<button class="jx" data-j="stop">وقف الرحلة</button></div>`}
+else{const L=[0,1,2,3,4,5,6].filter(i=>j.e[i]).map(i=>`<div class="jl"><small>يوم ${i+1}</small>${esc2(j.e[i])}</div>`).join("");box.innerHTML=`<div class="jc"><h3>🌙 خلصت أسبوعك</h3><small>عن: «${esc2(j.topic)}...»</small>${dots}<p class="sw-m" style="margin:6px 0">${L?"دي سطورك اللي كتبتها بنفسك. اقراها براحة، وشوف الفرق بين أول يوم وآخر يوم.":"مكتبتش سطور الأسبوع ده، وده عادي تمامًا. الرحلة كانت هنا لو احتجتها."}</p>${L}<div class="jb"><button class="pr" data-j="end">قفل الرحلة</button></div><small>لما تقفلها، السطور بتتمسح من جهازك.</small></div>`}}
+box.addEventListener("click",e=>{const b=e.target.closest("[data-j]");if(!b)return;const j=G(),a=b.dataset.j,n=Math.round((d0(Date.now())-d0(j.start))/864e5);
+if(a=="save"){const v=$("#jin").value.trim();if(!v)return;j.e[n]=v;S(j);paint();toast("اتحفظ 💜");if(window.heavy&&heavy(v))setTimeout(()=>safety(1),700)}
+else if(a=="skip"){paint();toast("براحتك، هنكمل بكرة 🌿");box.querySelector(".jc").style.opacity=.7}
+else if(a=="edit"){delete j.e[n];S(j);paint()}
+else if(a=="stop"||a=="end"){if(a=="end"||confirm("توقف الرحلة؟ السطور اللي كتبتها هتتمسح.")){S(null);paint();toast("تمام 💜")}}});
+paint();})();
 </script></body></html>
