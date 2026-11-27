@@ -652,7 +652,7 @@ async function render(){const ae=document.activeElement;if(ae&&ae.matches("#feed
  $$("#feed input[data-in]").forEach(i=>{if(i.value)drafts[i.dataset.in]=i.value;else delete drafts[i.dataset.in]});
  try{D=await API.load()}catch(e){$("#feed").innerHTML='<div class="card err">مش قادر أتصل بالسيرفر. اتأكد من النت وجرب تاني.</div>';return}
  const ps=D.p.filter(p=>cat=="الكل"||p.category==cat);
- const sg=JSON.stringify([D.p,D.c,D.r,D.h,[...D.mine],[...(D.hm||[])],SP,cat,open,isAdm(),prof&&prof.username,prof&&prof.avatar,!!sess,CL.length]);if(sg===fsig&&$("#feed").innerHTML){renderDaily();return}fsig=sg;
+ const so=a=>(a||[]).map(x=>JSON.stringify(x)).sort(),sg=JSON.stringify([D.p,D.c,so(D.r),so(D.h),[...D.mine].sort(),[...(D.hm||[])].sort(),SP,cat,open,isAdm(),prof&&prof.username,prof&&prof.avatar,!!sess,CL.length]);if(sg===fsig&&$("#feed").innerHTML){renderDaily();return}fsig=sg;
  $("#feed").innerHTML=ps.length?ps.map((p,i)=>{const cs=D.c.filter(c=>c.post_id==p.id&&!SRP.includes(String(c.body).trim())),srr=D.c.filter(c=>c.post_id==p.id&&SRP.includes(String(c.body).trim())),sh=open[p.id]?cs:cs.slice(-2);
  return`<article class="card" style="--cc:${CCOL(p.category)||"#8b7cf6"};animation-delay:${Math.min(i,6)*50}ms" data-id="${p.id}"><div class="ph">${av(p.alias,"",p.avatar)}<div><b>${esc(p.alias)}</b>${vb(p.alias)}${isAdm()?`<span class="adm"><button data-a="aed">✏️</button><button data-a="adel">🗑</button><button data-a="aban">🚫</button></span>`:""}<span class="m">${ago(p.created_at)}${isFinite(new Date(p.expires_at))?" · يختفي بعد "+left(p.expires_at):""}</span></div>
  <div class="tg"><span class="b">${esc(p.category)}</span><span class="b ${p.intent=="advice"?"adv":"vnt"}">${p.intent=="advice"?"عايز نصيحة":"عايز يفضفض بس"}</span></div></div>
@@ -757,7 +757,7 @@ document.addEventListener("click",async e=>{const f=e.target.closest("[data-fs=s
  try{const q=ident("story");await rq("stories",{method:"POST",body:JSON.stringify({body:v,alias:q.alias,avatar:q.avatar,device_id:dev})});$("#stx").value="";toast("وصلت للمراجعة، شكرًا إنك شاركت 💜")}catch(x){toast("حصلت مشكلة، جرب تاني")}});
 // notifications (in-app only)
 let nUnread=0;const NT={comment:n=>`💬 ${esc(n.actor||"حد")} ردّ على حكايتك`,helpful:()=>"💡 حد حس إن ردك أفاده"};
-async function pollN(){if(!CLOUD||!sess||document.hidden)return;try{const r=await rq("notifications?select=id&read=eq.false&limit=50");nUnread=r.length;const b=$("#bn");b.textContent=nUnread>9?"9+":nUnread||"";b.style.display=nUnread?"":"none"}catch(e){}}
+async function pollN(){if(!CLOUD||!sess||document.hidden)return;try{const r=await rq("notifications?select=id&read=eq.false&limit=50");const nn=r.length;if(nn!==nUnread||!pollN.d){nUnread=nn;pollN.d=1;const b=$("#bn");b.textContent=nUnread>9?"9+":nUnread||"";b.style.display=nUnread?"":"none"}}catch(e){}}
 async function renderNotif(){const el=$("#notif");if(!sess){el.innerHTML='<div class="card"><h3>🔔 الإشعارات</h3><p>سجّل دخول عشان تعرف لو حد ردّ عليك.</p><button class="full" data-au2="in">تسجيل دخول</button></div>';return}
  let r=[];try{r=await rq("notifications?select=id,kind,post_id,actor,created_at,read&order=created_at.desc&limit=40")}catch(e){el.innerHTML='<div class="card"><h3>🔔 الإشعارات</h3><p>لسه مش متاحة (محتاجة تحديث السيرفر).</p></div>';return}
  el.innerHTML='<div class="card"><h3>🔔 الإشعارات</h3>'+(r.length?r.map(n=>`<div class="ar" style="${n.read?"opacity:.6":""}"><b>${(NT[n.kind]||(()=>"🔔 جديد"))(n)}</b><div class="m">${ago(n.created_at)}</div></div>`).join(""):'<p>مفيش إشعارات لسه. لما حد يرد على حكايتك هتلاقيه هنا.</p>')+'<p class="m">الإشعارات جوه التطبيق بس، بتتحدّث وإنت فاتحه.</p></div>';
@@ -872,8 +872,8 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="5.4";
-if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener("controllerchange",()=>{if(had&&!sessionStorage.rl41){sessionStorage.rl41=1;location.reload()}});navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
+const VER="5.4.1";
+if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 
 function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
 addEventListener("resize",dbg);
@@ -1041,8 +1041,8 @@ const clickOn=()=>{const b=document.createElement("button");b.dataset.pu="on";b.
 $("#pkok").onclick=()=>{P.classList.remove("on");if(mode=="ask")clickOn()};
 P.addEventListener("click",e=>{if(e.target===P)P.classList.remove("on")});
 const nb=document.createElement("div");nb.id="nbn";$("#calm").before(nb);
-function paintNB(){const n=typeof nUnread=="number"?nUnread:0;$("#bell").classList.toggle("nw",n>0);nb.innerHTML=n>0&&sess?`<button class="nb" id="nbb"><span>🔔 فيه ردود جديدة على مشاركتك</span><b>${n>9?"9+":n}</b></button>`:""}
+let lastN=-1;function paintNB(){const n=(typeof nUnread=="number"?nUnread:0)*(sess?1:0);if(n===lastN)return;lastN=n;$("#bell").classList.toggle("nw",n>0);if(n>0){let bt=nb.querySelector("#nbb");if(!bt){nb.innerHTML=`<button class="nb" id="nbb"><span>🔔 فيه ردود جديدة على مشاركتك</span><b></b></button>`;bt=nb.firstChild}bt.querySelector("b").textContent=n>9?"9+":n}else nb.innerHTML=""}
 nb.onclick=e=>{if(e.target.closest("#nbb"))view("notif")};
-setInterval(paintNB,3000);setTimeout(paintNB,2000);setTimeout(paintNB,4500);
+setInterval(paintNB,5000);setTimeout(paintNB,2000);setTimeout(paintNB,4500);
 })();
 </script></body></html>
