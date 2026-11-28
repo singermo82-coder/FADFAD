@@ -676,7 +676,7 @@ async function render(){const ae=document.activeElement;if(ae&&ae.matches("#feed
 <text class="tw" x="140" y="42" font-size="18" fill="#fff" font-weight="700">z</text><text class="tw" style="animation-delay:.8s" x="156" y="26" font-size="24" fill="#fff" font-weight="700">Z</text><path class="tw" d="M30 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#fff"/></svg><b>الدنيا هادية هنا... لسه</b>كن أول واحد يفضفض النهاردة. اسمك مستخدمش، ومحدش هيعرفك.<br><button data-open>✍️ احكي أول حكاية</button></div>`;
  $$("#feed input[data-in]").forEach(i=>{if(drafts[i.dataset.in])i.value=drafts[i.dataset.in]});
  renderDaily();
- $("#stats").innerHTML=D.p.length?`<span>🌙 <b>${D.p.length}</b> بيفضفضوا دلوقتي</span><span>🤝 <b>${D.r.length}</b> دعم</span><span>💬 <b>${D.c.length}</b> رد</span>`:`<span>🌱 مساحة جديدة، ابدأها إنت</span>`}
+ $("#stats").innerHTML=`<span>🟢 <b id="lvn">${window.__live==null?"–":window.__live}</b> متواجدين دلوقتي</span><span>🤝 <b>${D.r.length}</b> دعم</span><span>💬 <b>${D.c.length}</b> رد</span>`}
 $("#feed").onclick=async e=>{const t=e.target.closest("button"),c=t&&t.closest(".card");if(!c||busy||t.dataset.open!==undefined)return;if(t.closest(".c")&&t.dataset.cid===undefined&&!t.dataset.a)return;const id=c.dataset.id;busy=1;
  try{if(["aed","adel","aban","ced","cdel","cban"].includes(t.dataset.a)){await adminFeed(t,id)}
  else if(t.dataset.a!="tg"&&need()){busy=0;return}
@@ -865,7 +865,9 @@ window.wnLink=n=>{try{if(localStorage.wvid)rpc("link_visitor",{v:localStorage.wv
 (function(){try{if(navigator.doNotTrack=="1")return;const q=new URLSearchParams(location.search);let src=(q.get("src")||q.get("utm_source")||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,24);
  if(!src&&document.referrer){try{const h=new URL(document.referrer).hostname.replace(/^www\./,"");if(h&&h!=location.hostname)src=/instagram|l\.instagram/.test(h)?"instagram":/facebook|fb\.com|l\.facebook/.test(h)?"facebook":/tiktok/.test(h)?"tiktok":/google/.test(h)?"google":/t\.co|twitter|x\.com/.test(h)?"x":/youtube|youtu\.be/.test(h)?"youtube":/snapchat/.test(h)?"snapchat":/whatsapp|wa\.me/.test(h)?"whatsapp":/t\.me|telegram/.test(h)?"telegram":"other"}catch(e){}}
  const v=localStorage.wvid||(localStorage.wvid=crypto.randomUUID().replace(/-/g,"")),ns=!sessionStorage.wvs;sessionStorage.wvs=1;
- setTimeout(()=>{rpc("track_visit",{v,s:src||"direct",newsess:ns}).catch(()=>{})},3000)}catch(e){}})();
+ setTimeout(()=>{rpc("track_visit",{v,s:src||"direct",newsess:ns}).catch(()=>{})},3000);
+ const beat=()=>{if(!document.hidden)rpc("track_visit",{v,s:src||"direct",newsess:false}).catch(()=>{})};setInterval(beat,120000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)setTimeout(beat,1500)})}catch(e){}
+ const lv=()=>{if(document.hidden)return;rpc("live_now").then(n=>{if(typeof n=="number"&&n!==window.__live){window.__live=n;const e=document.getElementById("lvn");if(e)e.textContent=n}}).catch(()=>{})};setTimeout(lv,4500);setInterval(lv,60000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)setTimeout(lv,2000)})})();
 document.getElementById("tstrip").addEventListener("click",e=>{if(!isAdm()||!e.target.closest("#stats"))return;admTab="on";view("adminv")});
 async function pingP(){if(!sess||document.hidden)return;try{await rpc("ping_presence")}catch(e){}}
 setTimeout(pingP,4000);setInterval(pingP,120000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)setTimeout(pingP,1500)});
@@ -904,7 +906,7 @@ const _view=view;view=function(v){_view(v);if(v=="adminv")renderAdmin();if(v=="a
 $("#acct").addEventListener("click",e=>{if(e.target.closest("[data-v]"))view(e.target.closest("[data-v]").dataset.v)});
 (async()=>{if(CLOUD&&sess){try{await loadProf()}catch(e){}}afterAuth()})();
 render();setInterval(()=>{if(!document.hidden&&!busy&&!$("#ov").classList.contains("on")&&!document.activeElement.matches("input,textarea")&&!document.querySelector("#feed input[data-in]:not(:placeholder-shown)")&&!document.querySelector("#dq input:not(:placeholder-shown)"))render()},20000);
-const VER="5.5.4";
+const VER="5.5.5";
 if("serviceWorker"in navigator){const had=!!navigator.serviceWorker.controller;navigator.serviceWorker.register("sw.js?v="+VER,{updateViaCache:"none"}).then(r=>r.update()).catch(()=>{})}
 
 function dbg(){const e=$("#dbg");if(!e)return;const st=(navigator.standalone||matchMedia("(display-mode: standalone)").matches)?"yes":"no";e.textContent=`v${VER} | inner ${innerWidth}x${innerHeight} | screen ${screen.width}x${screen.height} | dpr ${devicePixelRatio} | eff ${window.__ew} zoom ${(window.__k||1).toFixed(2)} | standalone ${st} | ${document.documentElement.className} | touch ${navigator.maxTouchPoints}`}
